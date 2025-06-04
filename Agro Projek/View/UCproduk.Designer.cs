@@ -49,6 +49,7 @@
             buttonKeluar.TabIndex = 9;
             buttonKeluar.Text = "Keluar";
             buttonKeluar.UseVisualStyleBackColor = false;
+            buttonKeluar.Click += buttonKeluar_Click;
             // 
             // buttonRiwayat
             // 

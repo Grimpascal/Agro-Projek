@@ -107,6 +107,7 @@
             buttonKeluar.TabIndex = 4;
             buttonKeluar.Text = "Keluar";
             buttonKeluar.UseVisualStyleBackColor = false;
+            buttonKeluar.Click += buttonKeluar_Click;
             // 
             // UCdashboard
             // 

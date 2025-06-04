@@ -29,5 +29,11 @@ namespace Agro_Projek.View
             var mainForm = this.Parent as panelBox;
             mainForm.loadControl(new UCproduk());
         }
+
+        private void buttonKeluar_Click(object sender, EventArgs e)
+        {
+            var mainForm = this.Parent as panelBox;
+            mainForm.loadControl(new UClogin());
+        }
     }
 }

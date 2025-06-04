@@ -13,7 +13,8 @@ namespace Agro_Projek
         public void loadControl(UserControl uc)
         {
             this.Controls.Clear();
-            uc.Dock = DockStyle.Fill;
+            uc.Dock = DockStyle.None;
+            uc.Anchor = AnchorStyles.None;
             this.Controls.Add(uc);
         }
 
