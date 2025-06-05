@@ -103,6 +103,7 @@
             Controls.Add(textUsername);
             Name = "UCregister";
             Size = new Size(1440, 1024);
+            Load += UCregister_Load;
             ResumeLayout(false);
             PerformLayout();
         }

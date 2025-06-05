@@ -37,5 +37,10 @@ namespace Agro_Projek.View
             keluar.StartPosition = FormStartPosition.CenterScreen;
             keluar.Show();
         }
+
+        private void buttonPesanan_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

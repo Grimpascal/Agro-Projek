@@ -37,7 +37,7 @@ namespace Agro_Projek.Controller
         }
         public bool RegisterUser(string username, string password, string no_telepon)
         {
-            string queryRegis = "INSERT INTO users (username, password, no_telepon) VALUES (@username, @password, @no_telepon)";
+            string queryRegis = "INSERT INTO users (username, password, no_telepon, role) VALUES (@username, @password, @no_telepon, 'user')";
 
             using (NpgsqlConnection conn = new NpgsqlConnection(db))
             {

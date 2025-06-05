@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace Agro_Projek.View
 {
-    public partial class keluar : Form
+    public partial class UCdashboardAdmin : UserControl
     {
-        public keluar()
+        public UCdashboardAdmin()
         {
             InitializeComponent();
-        }
-
-        private void buttonKembali_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void buttonKeluar_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

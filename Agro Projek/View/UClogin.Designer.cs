@@ -34,22 +34,25 @@
             buttonLogin = new Button();
             linkRegister = new LinkLabel();
             checkPw = new CheckBox();
+            linkAdmin = new LinkLabel();
             SuspendLayout();
             // 
             // textUsername
             // 
             textUsername.BorderStyle = BorderStyle.None;
-            textUsername.Location = new Point(1008, 397);
+            textUsername.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textUsername.Location = new Point(1008, 391);
             textUsername.Name = "textUsername";
-            textUsername.Size = new Size(307, 24);
+            textUsername.Size = new Size(307, 32);
             textUsername.TabIndex = 0;
             // 
             // textPassword
             // 
             textPassword.BorderStyle = BorderStyle.None;
-            textPassword.Location = new Point(1008, 550);
+            textPassword.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textPassword.Location = new Point(1008, 544);
             textPassword.Name = "textPassword";
-            textPassword.Size = new Size(307, 24);
+            textPassword.Size = new Size(307, 32);
             textPassword.TabIndex = 1;
             textPassword.UseSystemPasswordChar = true;
             // 
@@ -86,7 +89,7 @@
             checkPw.AutoSize = true;
             checkPw.BackColor = Color.Transparent;
             checkPw.FlatStyle = FlatStyle.Flat;
-            checkPw.Location = new Point(956, 627);
+            checkPw.Location = new Point(956, 613);
             checkPw.Name = "checkPw";
             checkPw.Size = new Size(77, 29);
             checkPw.TabIndex = 5;
@@ -94,11 +97,25 @@
             checkPw.UseVisualStyleBackColor = false;
             checkPw.CheckedChanged += checkPw_CheckedChanged;
             // 
+            // linkAdmin
+            // 
+            linkAdmin.AutoSize = true;
+            linkAdmin.BackColor = Color.Transparent;
+            linkAdmin.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            linkAdmin.Location = new Point(1102, 798);
+            linkAdmin.Name = "linkAdmin";
+            linkAdmin.Size = new Size(99, 21);
+            linkAdmin.TabIndex = 6;
+            linkAdmin.TabStop = true;
+            linkAdmin.Text = "Login Admin";
+            linkAdmin.LinkClicked += linkAdmin_LinkClicked;
+            // 
             // UClogin
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            Controls.Add(linkAdmin);
             Controls.Add(checkPw);
             Controls.Add(linkRegister);
             Controls.Add(buttonLogin);
@@ -118,5 +135,6 @@
         private Button buttonLogin;
         private LinkLabel linkRegister;
         private CheckBox checkPw;
+        private LinkLabel linkAdmin;
     }
 }

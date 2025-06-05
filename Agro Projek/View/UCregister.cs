@@ -49,12 +49,12 @@ namespace Agro_Projek.View
                 }
             }
 
-            if(no_telepon.Length < 12)
+            if (no_telepon.Length < 12)
             {
                 textUsername.Clear();
                 textPw.Clear();
                 textTelepon.Clear();
-                MessageBox.Show("Nomor telepon tidak sesuai ketentuan(12 nomor)","Notifikasi",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Nomor telepon tidak sesuai ketentuan(12 nomor)", "Notifikasi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -89,6 +89,11 @@ namespace Agro_Projek.View
         {
             var mainform = this.Parent as panelBox;
             mainform.loadControl(new UClogin());
+        }
+
+        private void UCregister_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

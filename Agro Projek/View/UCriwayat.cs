@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace Agro_Projek.View
 {
-    public partial class keluar : Form
+    public partial class UCriwayat : UserControl
     {
-        public keluar()
+        public UCriwayat()
         {
             InitializeComponent();
-        }
-
-        private void buttonKembali_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void buttonKeluar_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

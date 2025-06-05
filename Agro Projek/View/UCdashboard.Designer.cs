@@ -79,6 +79,7 @@
             buttonPesanan.TabIndex = 2;
             buttonPesanan.Text = "Pesanan";
             buttonPesanan.UseVisualStyleBackColor = false;
+            buttonPesanan.Click += buttonPesanan_Click;
             // 
             // buttonRiwayat
             // 

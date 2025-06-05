@@ -71,5 +71,12 @@ namespace Agro_Projek.View
             mainForm.loadControl(new UCregister());
             this.Hide();
         }
+
+        private void linkAdmin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var mainForm = this.Parent as panelBox;
+            mainForm.loadControl(new UCloginAdmin());
+            this.Hide();
+        }
     }
 }
