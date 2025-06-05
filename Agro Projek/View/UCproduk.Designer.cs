@@ -64,6 +64,7 @@
             buttonRiwayat.TabIndex = 8;
             buttonRiwayat.Text = "Riwayat";
             buttonRiwayat.UseVisualStyleBackColor = false;
+            buttonRiwayat.Click += buttonRiwayat_Click;
             // 
             // buttonPesanan
             // 
@@ -78,6 +79,7 @@
             buttonPesanan.TabIndex = 7;
             buttonPesanan.Text = "Pesanan";
             buttonPesanan.UseVisualStyleBackColor = false;
+            buttonPesanan.Click += buttonPesanan_Click;
             // 
             // buttonProduk
             // 

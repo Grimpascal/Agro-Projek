@@ -33,14 +33,23 @@ namespace Agro_Projek.View
 
         private void buttonKeluar_Click(object sender, EventArgs e)
         {
-            keluar keluar = new keluar();
-            keluar.StartPosition = FormStartPosition.CenterScreen;
-            keluar.Show();
+            var mainForm = this.Parent as panelBox;
+            mainForm.loadControl(new UClogin());
+            this.Hide();
         }
 
         private void buttonPesanan_Click(object sender, EventArgs e)
         {
+            var mainForm = this.Parent as panelBox;
+            mainForm.loadControl(new UCpesanan());
+            this.Hide();
+        }
 
+        private void buttonRiwayat_Click(object sender, EventArgs e)
+        {
+            var mainForm = this.Parent as panelBox;
+            mainForm.loadControl(new UCriwayat());
+            this.Hide();
         }
     }
 }

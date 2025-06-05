@@ -35,5 +35,19 @@ namespace Agro_Projek.View
             var mainForm = this.Parent as panelBox;
             mainForm.loadControl(new UClogin());
         }
+
+        private void buttonPesanan_Click(object sender, EventArgs e)
+        {
+            var mainForm = this.Parent as panelBox;
+            mainForm.loadControl(new UCpesanan());
+            this.Hide();
+        }
+
+        private void buttonRiwayat_Click(object sender, EventArgs e)
+        {
+            var mainForm = this.Parent as panelBox;
+            mainForm.loadControl(new UCriwayat());
+            this.Hide();
+        }
     }
 }

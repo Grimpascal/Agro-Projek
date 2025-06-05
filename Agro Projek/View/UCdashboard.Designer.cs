@@ -94,6 +94,7 @@
             buttonRiwayat.TabIndex = 3;
             buttonRiwayat.Text = "Riwayat";
             buttonRiwayat.UseVisualStyleBackColor = false;
+            buttonRiwayat.Click += buttonRiwayat_Click;
             // 
             // buttonKeluar
             // 
