@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Agro_Projek.Controller;
 
 namespace Agro_Projek.View
 {
     public partial class UCdashboard : UserControl
     {
+        panelBox panelBox;
         public UCdashboard()
         {
             InitializeComponent();
@@ -33,9 +35,8 @@ namespace Agro_Projek.View
 
         private void buttonKeluar_Click(object sender, EventArgs e)
         {
-            var mainForm = this.Parent as panelBox;
-            mainForm.loadControl(new UClogin());
-            this.Hide();
+            keluar keluar = new keluar(this.Parent as panelBox);
+            keluar.ShowDialog();
         }
 
         private void buttonPesanan_Click(object sender, EventArgs e)
@@ -50,6 +51,11 @@ namespace Agro_Projek.View
             var mainForm = this.Parent as panelBox;
             mainForm.loadControl(new UCriwayat());
             this.Hide();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

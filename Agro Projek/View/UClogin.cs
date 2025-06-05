@@ -42,15 +42,18 @@ namespace Agro_Projek.View
                 MessageBox.Show("Login Berhasil", "Notifikasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();
                 var mainForm = this.Parent as panelBox;
-                mainForm.loadControl(new UCdashboard());
-            }
-            else
-            {
-                MessageBox.Show("Akun tidak ditemukan, silahkan klik tombol register", "Notifikasi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                textUsername.Clear();
-                textPassword.Clear();
-            }
+                if (mainForm != null)
+                {
+                    mainForm.loadControl(new UCdashboard());
+                }
+                else
+                {
+                    MessageBox.Show("Akun tidak ditemukan, silahkan klik tombol register", "Notifikasi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    textUsername.Clear();
+                    textPassword.Clear();
+                }
 
+            }
         }
 
         private void checkPw_CheckedChanged(object sender, EventArgs e)

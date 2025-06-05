@@ -75,6 +75,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "keluar";
             Text = "keluar";
+            Load += keluar_Load;
             ResumeLayout(false);
         }
 

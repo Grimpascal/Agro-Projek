@@ -12,9 +12,11 @@ namespace Agro_Projek.View
 {
     public partial class keluar : Form
     {
-        public keluar()
+        private panelBox panelBox;
+        public keluar(panelBox form)
         {
             InitializeComponent();
+            panelBox = form;
         }
 
         private void buttonKembali_Click(object sender, EventArgs e)
@@ -25,6 +27,13 @@ namespace Agro_Projek.View
         private void buttonKeluar_Click(object sender, EventArgs e)
         {
             this.Close();
+            var mainform = this.Parent as panelBox;
+            mainform.loadControl(new UClogin());
+        }
+
+        private void keluar_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
