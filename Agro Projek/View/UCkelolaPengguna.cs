@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Agro_Projek.View
 {
-    public partial class UCdashboardAdmin : UserControl
+    public partial class UCkelolaPengguna : UserControl
     {
-        public UCdashboardAdmin()
+        public UCkelolaPengguna()
         {
             InitializeComponent();
         }
@@ -38,7 +38,7 @@ namespace Agro_Projek.View
         private void buttonKpengguna_Click(object sender, EventArgs e)
         {
             var mainForm = this.Parent as panelBox;
-            mainForm.loadControl(new UCkelolaProduk());
+            mainForm.loadControl(new UCkelolaPengguna());
         }
 
         private void buttonKeluar_Click(object sender, EventArgs e)
