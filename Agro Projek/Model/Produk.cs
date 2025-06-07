@@ -10,7 +10,6 @@ namespace Agro_Projek.Model
     {
         public string nama_produk { get; set; }
         public int id_jenis_produk { get; set; }
-        public byte[] gambar_produk { get; set; }
         public int harga { get; set; }
         public int quantity { get; set; }
     }
