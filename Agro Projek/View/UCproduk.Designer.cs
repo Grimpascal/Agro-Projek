@@ -123,6 +123,7 @@
             Controls.Add(buttonDB);
             Name = "UCproduk";
             Size = new Size(1440, 1024);
+            Load += UCproduk_Load;
             ResumeLayout(false);
         }
 

@@ -123,6 +123,7 @@
             Controls.Add(buttonDB);
             Name = "UCpesanan";
             Size = new Size(1440, 1024);
+            Load += UCpesanan_Load;
             ResumeLayout(false);
         }
 

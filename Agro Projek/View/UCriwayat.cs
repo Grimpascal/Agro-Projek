@@ -47,9 +47,13 @@ namespace Agro_Projek.View
 
         private void buttonKeluar_Click(object sender, EventArgs e)
         {
-            var mainForm = this.Parent as panelBox;
-            mainForm.loadControl(new UClogin());
-            this.Hide();
+            keluar keluar = new keluar(this.Parent as panelBox);
+            keluar.ShowDialog();
+        }
+
+        private void UCriwayat_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

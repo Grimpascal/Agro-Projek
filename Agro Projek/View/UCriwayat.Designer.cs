@@ -123,6 +123,7 @@
             Controls.Add(buttonDB);
             Name = "UCriwayat";
             Size = new Size(1440, 1024);
+            Load += UCriwayat_Load;
             ResumeLayout(false);
         }
 

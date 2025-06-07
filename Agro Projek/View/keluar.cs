@@ -17,6 +17,7 @@ namespace Agro_Projek.View
         {
             InitializeComponent();
             panelBox = form;
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void buttonKembali_Click(object sender, EventArgs e)

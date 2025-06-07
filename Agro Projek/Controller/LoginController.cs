@@ -11,7 +11,6 @@ namespace Agro_Projek.Controller
     {
         public class loginController()
         {
-            private string conn = "Host=localhost;Username=postgres;Password=1;Database=Agromart";
         }
 
         public bool validasilogin(string username, string password)

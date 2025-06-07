@@ -43,8 +43,8 @@ namespace Agro_Projek.View
 
         private void buttonKeluar_Click(object sender, EventArgs e)
         {
-            var mainForm = this.Parent as panelBox;
-            mainForm.loadControl(new UClogin());
+            keluar keluar = new keluar(this.Parent as panelBox);
+            keluar.ShowDialog();
         }
     }
 }

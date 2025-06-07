@@ -34,6 +34,7 @@
             buttonKstok = new Button();
             buttonKproduk = new Button();
             buttonDBadmin = new Button();
+            buttonTambahProduk = new Button();
             SuspendLayout();
             // 
             // buttonKeluar
@@ -111,11 +112,27 @@
             buttonDBadmin.UseVisualStyleBackColor = false;
             buttonDBadmin.Click += buttonDBadmin_Click;
             // 
+            // buttonTambahProduk
+            // 
+            buttonTambahProduk.BackColor = Color.Transparent;
+            buttonTambahProduk.BackgroundImage = (Image)resources.GetObject("buttonTambahProduk.BackgroundImage");
+            buttonTambahProduk.FlatStyle = FlatStyle.Flat;
+            buttonTambahProduk.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonTambahProduk.ForeColor = SystemColors.Control;
+            buttonTambahProduk.Location = new Point(1174, 102);
+            buttonTambahProduk.Name = "buttonTambahProduk";
+            buttonTambahProduk.Size = new Size(220, 65);
+            buttonTambahProduk.TabIndex = 10;
+            buttonTambahProduk.Text = "Tambah Produk";
+            buttonTambahProduk.UseVisualStyleBackColor = false;
+            buttonTambahProduk.Click += buttonTambahProduk_Click;
+            // 
             // UCkelolaProduk
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            Controls.Add(buttonTambahProduk);
             Controls.Add(buttonKeluar);
             Controls.Add(buttonKpengguna);
             Controls.Add(buttonKstok);
@@ -133,5 +150,6 @@
         private Button buttonKstok;
         private Button buttonKproduk;
         private Button buttonDBadmin;
+        private Button buttonTambahProduk;
     }
 }

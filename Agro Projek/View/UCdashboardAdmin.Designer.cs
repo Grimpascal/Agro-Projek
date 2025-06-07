@@ -34,6 +34,12 @@
             buttonKstok = new Button();
             buttonKpengguna = new Button();
             buttonKeluar = new Button();
+            labelProduk = new Label();
+            produk = new Label();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            labelPengguna = new Label();
             SuspendLayout();
             // 
             // buttonDBadmin
@@ -111,11 +117,95 @@
             buttonKeluar.UseVisualStyleBackColor = false;
             buttonKeluar.Click += buttonKeluar_Click;
             // 
+            // labelProduk
+            // 
+            labelProduk.AutoSize = true;
+            labelProduk.BackColor = Color.Transparent;
+            labelProduk.FlatStyle = FlatStyle.Flat;
+            labelProduk.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelProduk.ForeColor = SystemColors.Control;
+            labelProduk.Location = new Point(428, 272);
+            labelProduk.Name = "labelProduk";
+            labelProduk.Size = new Size(38, 45);
+            labelProduk.TabIndex = 5;
+            labelProduk.Text = "0";
+            // 
+            // produk
+            // 
+            produk.AutoSize = true;
+            produk.BackColor = Color.Transparent;
+            produk.FlatStyle = FlatStyle.Flat;
+            produk.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            produk.ForeColor = SystemColors.Control;
+            produk.Location = new Point(428, 227);
+            produk.Name = "produk";
+            produk.Size = new Size(130, 45);
+            produk.TabIndex = 6;
+            produk.Text = "Produk";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.FlatStyle = FlatStyle.Flat;
+            label1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.Control;
+            label1.Location = new Point(433, 317);
+            label1.Name = "label1";
+            label1.Size = new Size(55, 28);
+            label1.TabIndex = 7;
+            label1.Text = "Item";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.FlatStyle = FlatStyle.Flat;
+            label2.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = SystemColors.Control;
+            label2.Location = new Point(762, 316);
+            label2.Name = "label2";
+            label2.Size = new Size(54, 28);
+            label2.TabIndex = 10;
+            label2.Text = "User";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
+            label3.FlatStyle = FlatStyle.Flat;
+            label3.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = SystemColors.Control;
+            label3.Location = new Point(759, 225);
+            label3.Name = "label3";
+            label3.Size = new Size(170, 45);
+            label3.TabIndex = 9;
+            label3.Text = "Pengguna";
+            // 
+            // labelPengguna
+            // 
+            labelPengguna.AutoSize = true;
+            labelPengguna.BackColor = Color.Transparent;
+            labelPengguna.FlatStyle = FlatStyle.Flat;
+            labelPengguna.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelPengguna.ForeColor = SystemColors.Control;
+            labelPengguna.Location = new Point(759, 270);
+            labelPengguna.Name = "labelPengguna";
+            labelPengguna.Size = new Size(38, 45);
+            labelPengguna.TabIndex = 8;
+            labelPengguna.Text = "0";
+            // 
             // UCdashboardAdmin
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            Controls.Add(label2);
+            Controls.Add(label3);
+            Controls.Add(labelPengguna);
+            Controls.Add(label1);
+            Controls.Add(produk);
+            Controls.Add(labelProduk);
             Controls.Add(buttonKeluar);
             Controls.Add(buttonKpengguna);
             Controls.Add(buttonKstok);
@@ -123,7 +213,9 @@
             Controls.Add(buttonDBadmin);
             Name = "UCdashboardAdmin";
             Size = new Size(1440, 1024);
+            Load += UCdashboardAdmin_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -133,5 +225,11 @@
         private Button buttonKstok;
         private Button buttonKpengguna;
         private Button buttonKeluar;
+        private Label labelProduk;
+        private Label produk;
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private Label labelPengguna;
     }
 }
