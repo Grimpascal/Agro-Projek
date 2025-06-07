@@ -59,7 +59,6 @@
             textNamaProduk.Name = "textNamaProduk";
             textNamaProduk.Size = new Size(423, 31);
             textNamaProduk.TabIndex = 1;
-            textNamaProduk.TextChanged += textNamaProduk_TextChanged;
             // 
             // label2
             // 
@@ -87,7 +86,6 @@
             textBoxHarga.Name = "textBoxHarga";
             textBoxHarga.Size = new Size(423, 31);
             textBoxHarga.TabIndex = 3;
-            textBoxHarga.TextChanged += textBoxHarga_TextChanged;
             // 
             // label4
             // 
@@ -131,7 +129,7 @@
             buttonTambah.FlatAppearance.BorderSize = 0;
             buttonTambah.FlatStyle = FlatStyle.Flat;
             buttonTambah.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonTambah.Location = new Point(206, 439);
+            buttonTambah.Location = new Point(205, 453);
             buttonTambah.Name = "buttonTambah";
             buttonTambah.Size = new Size(112, 34);
             buttonTambah.TabIndex = 10;

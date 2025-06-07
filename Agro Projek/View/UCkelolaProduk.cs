@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Agro_Projek.Controller;
 
 namespace Agro_Projek.View
 {
@@ -16,6 +17,7 @@ namespace Agro_Projek.View
         {
             InitializeComponent();
         }
+
 
         private void buttonDBadmin_Click(object sender, EventArgs e)
         {
@@ -51,6 +53,32 @@ namespace Agro_Projek.View
         {
             TambahProduk addProduk = new TambahProduk(this.Parent as panelBox);
             addProduk.ShowDialog();
+        }
+
+        private void UCkelolaProduk_Load(object sender, EventArgs e)
+        {
+            loadMenu();
+        }
+
+        public void loadMenu()
+        {
+            flowListMakanan.Controls.Clear();
+            var list_makanan = ProdukController.TampilanProduk();
+            foreach (var produkk in list_makanan)
+            {
+                UCtampilanProduk tampilanProduk = new UCtampilanProduk(produkk, this);
+                flowListMakanan.Controls.Add(new UCtampilanProduk(produkk, this));
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void flowListMakanan_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

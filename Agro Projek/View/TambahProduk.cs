@@ -39,7 +39,7 @@ namespace Agro_Projek.View
             this.Close();
         }
 
-        public void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             string namaProduk = textNamaProduk.Text;
 
@@ -53,7 +53,7 @@ namespace Agro_Projek.View
 
             if (!int.TryParse(textBoxStok.Text, out int quantityProduk))
             {
-                textBoxStok.Clear(); 
+                textBoxStok.Clear();
                 MessageBox.Show("Masukkan input yang benar untuk stok.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 textBoxStok.Focus();
                 return;
@@ -93,6 +93,7 @@ namespace Agro_Projek.View
 
 
 
+
         public void textNamaProduk_TextChanged(object sender, EventArgs e)
         {
 
@@ -105,7 +106,12 @@ namespace Agro_Projek.View
 
         private void comboBoxJenis_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

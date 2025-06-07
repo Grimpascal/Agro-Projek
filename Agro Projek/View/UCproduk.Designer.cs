@@ -34,6 +34,7 @@
             buttonPesanan = new Button();
             buttonProduk = new Button();
             buttonDB = new Button();
+            flowProdukUser = new FlowLayoutPanel();
             SuspendLayout();
             // 
             // buttonKeluar
@@ -111,11 +112,20 @@
             buttonDB.UseVisualStyleBackColor = false;
             buttonDB.Click += buttonDB_Click;
             // 
+            // flowProdukUser
+            // 
+            flowProdukUser.Location = new Point(340, 306);
+            flowProdukUser.Name = "flowProdukUser";
+            flowProdukUser.Size = new Size(1072, 608);
+            flowProdukUser.TabIndex = 10;
+            flowProdukUser.Paint += flowProdukUser_Paint;
+            // 
             // UCproduk
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            Controls.Add(flowProdukUser);
             Controls.Add(buttonKeluar);
             Controls.Add(buttonRiwayat);
             Controls.Add(buttonPesanan);
@@ -134,5 +144,6 @@
         private Button buttonPesanan;
         private Button buttonProduk;
         private Button buttonDB;
+        private FlowLayoutPanel flowProdukUser;
     }
 }

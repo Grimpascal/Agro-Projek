@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace Agro_Projek.Model
 {
-    internal class Produk
+    public class Produk
     {
-        public string nama_produk {  get; set; }
+        public string nama_produk { get; set; }
         public int id_jenis_produk { get; set; }
-        public int harga {  get; set; }
+        public byte[] gambar_produk { get; set; }
+        public int harga { get; set; }
         public int quantity { get; set; }
     }
 }

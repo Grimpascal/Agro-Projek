@@ -35,6 +35,8 @@
             buttonKproduk = new Button();
             buttonDBadmin = new Button();
             buttonTambahProduk = new Button();
+            label1 = new Label();
+            flowListMakanan = new FlowLayoutPanel();
             SuspendLayout();
             // 
             // buttonKeluar
@@ -127,11 +129,35 @@
             buttonTambahProduk.UseVisualStyleBackColor = false;
             buttonTambahProduk.Click += buttonTambahProduk_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(297, 253);
+            label1.Name = "label1";
+            label1.Size = new Size(165, 38);
+            label1.TabIndex = 11;
+            label1.Text = "List Produk";
+            label1.Click += label1_Click;
+            // 
+            // flowListMakanan
+            // 
+            flowListMakanan.AutoScroll = true;
+            flowListMakanan.BackColor = Color.FromArgb(0, 192, 0);
+            flowListMakanan.Location = new Point(308, 318);
+            flowListMakanan.Name = "flowListMakanan";
+            flowListMakanan.Size = new Size(940, 418);
+            flowListMakanan.TabIndex = 12;
+            flowListMakanan.Paint += flowListMakanan_Paint;
+            // 
             // UCkelolaProduk
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            Controls.Add(flowListMakanan);
+            Controls.Add(label1);
             Controls.Add(buttonTambahProduk);
             Controls.Add(buttonKeluar);
             Controls.Add(buttonKpengguna);
@@ -140,7 +166,9 @@
             Controls.Add(buttonDBadmin);
             Name = "UCkelolaProduk";
             Size = new Size(1440, 1024);
+            Load += UCkelolaProduk_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -151,5 +179,7 @@
         private Button buttonKproduk;
         private Button buttonDBadmin;
         private Button buttonTambahProduk;
+        private Label label1;
+        private FlowLayoutPanel flowListMakanan;
     }
 }

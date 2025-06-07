@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Agro_Projek.Controller;
+using Agro_Projek.Model;
 
 namespace Agro_Projek.View
 {
@@ -51,6 +53,17 @@ namespace Agro_Projek.View
         }
 
         private void UCproduk_Load(object sender, EventArgs e)
+        {
+            flowProdukUser.Controls.Clear();
+            var list_produk = ProdukController.TampilanProduk();
+            foreach (var produk in list_produk)
+            {
+                UCtampilanProduk tampilanProduk = new UCtampilanProduk(produk, this);
+                flowProdukUser.Controls.Add(tampilanProduk);
+            }
+        }
+
+        private void flowProdukUser_Paint(object sender, PaintEventArgs e)
         {
 
         }
