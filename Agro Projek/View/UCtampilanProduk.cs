@@ -18,32 +18,22 @@ namespace Agro_Projek.View
         UCkelolaProduk parentMenu;
 
         private PictureBox pictureBoxGambar;
+        private UCproduk uCproduk;
 
         public UCtampilanProduk(Produk produk, UCkelolaProduk parentMenu)
         {
             InitializeComponent();
             this.produk = produk;
             this.parentMenu = parentMenu;
-            using (MemoryStream ms = new MemoryStream(produk.gambar_produk))
-            {
-                pictureBoxGambar.BackgroundImage = Image.FromStream(ms);
-            }
 
             labelNama.Text = produk.nama_produk;
             labelHarga.Text = "Rp. " + produk.harga.ToString();
-
-            if (produk.gambar_produk != null)
-            {
-                using (MemoryStream ms = new MemoryStream(produk.gambar_produk))
-                {
-                    pictureBoxGambar.Image = Image.FromStream(ms);
-                }
-            }
         }
 
         public UCtampilanProduk(Produk produk, UCproduk uCproduk)
         {
             this.produk = produk;
+            this.uCproduk = uCproduk;
         }
 
         private void tampilanProduk_Load(object sender, EventArgs e)

@@ -85,6 +85,7 @@ namespace Agro_Projek.Controller
                                 nama_produk = reader.GetString(1),
                                 harga = reader.GetInt32(3),
                             };
+                            listProduk.Add(produk);
                         }
                 }
             }

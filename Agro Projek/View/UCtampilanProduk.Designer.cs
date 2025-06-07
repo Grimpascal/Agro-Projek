@@ -37,7 +37,7 @@
             labelNama.AutoSize = true;
             labelNama.BackColor = Color.Transparent;
             labelNama.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelNama.Location = new Point(47, 119);
+            labelNama.Location = new Point(56, 28);
             labelNama.Name = "labelNama";
             labelNama.Size = new Size(68, 28);
             labelNama.TabIndex = 0;
@@ -48,7 +48,7 @@
             labelHarga.AutoSize = true;
             labelHarga.BackColor = Color.Transparent;
             labelHarga.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelHarga.Location = new Point(46, 165);
+            labelHarga.Location = new Point(322, 28);
             labelHarga.Name = "labelHarga";
             labelHarga.Size = new Size(69, 28);
             labelHarga.TabIndex = 1;
@@ -58,11 +58,11 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Gray;
+            BackColor = Color.White;
             Controls.Add(labelHarga);
             Controls.Add(labelNama);
             Name = "UCtampilanProduk";
-            Size = new Size(174, 212);
+            Size = new Size(460, 85);
             Load += tampilanProduk_Load;
             ResumeLayout(false);
             PerformLayout();
