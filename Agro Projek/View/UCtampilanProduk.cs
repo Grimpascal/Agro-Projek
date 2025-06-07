@@ -15,16 +15,13 @@ namespace Agro_Projek.View
     public partial class UCtampilanProduk : UserControl
     {
         Produk produk;
-        UCkelolaProduk parentMenu;
+        UCkelolaProduk parentProduk;
 
-        private PictureBox pictureBoxGambar;
-        private UCproduk uCproduk;
-
-        public UCtampilanProduk(Produk produk, UCkelolaProduk parentMenu)
+        public UCtampilanProduk(Produk produk, UCkelolaProduk parentProduk)
         {
             InitializeComponent();
             this.produk = produk;
-            this.parentMenu = parentMenu;
+            this.parentProduk = parentProduk;
 
             labelNama.Text = produk.nama_produk;
             labelHarga.Text = "Rp. " + produk.harga.ToString();
@@ -33,7 +30,6 @@ namespace Agro_Projek.View
         public UCtampilanProduk(Produk produk, UCproduk uCproduk)
         {
             this.produk = produk;
-            this.uCproduk = uCproduk;
         }
 
         private void tampilanProduk_Load(object sender, EventArgs e)

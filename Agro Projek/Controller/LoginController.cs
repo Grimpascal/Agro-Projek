@@ -36,7 +36,7 @@ namespace Agro_Projek.Controller
                         }
                     }
                 }
-                catch (Exception ex)
+                catch (Exception ex) 
                 {
                     MessageBox.Show("Terjadi Error", "Notifikasi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }

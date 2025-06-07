@@ -34,6 +34,7 @@
             buttonKstok = new Button();
             buttonKproduk = new Button();
             buttonDBadmin = new Button();
+            flowUser = new FlowLayoutPanel();
             SuspendLayout();
             // 
             // buttonKeluar
@@ -111,11 +112,19 @@
             buttonDBadmin.UseVisualStyleBackColor = false;
             buttonDBadmin.Click += buttonDBadmin_Click;
             // 
+            // flowUser
+            // 
+            flowUser.Location = new Point(330, 226);
+            flowUser.Name = "flowUser";
+            flowUser.Size = new Size(1110, 611);
+            flowUser.TabIndex = 10;
+            // 
             // UCkelolaStok
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            Controls.Add(flowUser);
             Controls.Add(buttonKeluar);
             Controls.Add(buttonKpengguna);
             Controls.Add(buttonKstok);
@@ -133,5 +142,6 @@
         private Button buttonKstok;
         private Button buttonKproduk;
         private Button buttonDBadmin;
+        private FlowLayoutPanel flowUser;
     }
 }

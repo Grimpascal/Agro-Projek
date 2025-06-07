@@ -34,6 +34,8 @@
             buttonKstok = new Button();
             buttonKproduk = new Button();
             buttonDBadmin = new Button();
+            flowPengguna = new FlowLayoutPanel();
+            label1 = new Label();
             SuspendLayout();
             // 
             // buttonKeluar
@@ -111,11 +113,33 @@
             buttonDBadmin.UseVisualStyleBackColor = false;
             buttonDBadmin.Click += buttonDBadmin_Click;
             // 
+            // flowPengguna
+            // 
+            flowPengguna.AllowDrop = true;
+            flowPengguna.Location = new Point(322, 201);
+            flowPengguna.Name = "flowPengguna";
+            flowPengguna.Size = new Size(1099, 759);
+            flowPengguna.TabIndex = 10;
+            flowPengguna.Paint += flowPengguna_Paint;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(322, 153);
+            label1.Name = "label1";
+            label1.Size = new Size(243, 45);
+            label1.TabIndex = 11;
+            label1.Text = "List Pengguna :";
+            // 
             // UCkelolaPengguna
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            Controls.Add(label1);
+            Controls.Add(flowPengguna);
             Controls.Add(buttonKeluar);
             Controls.Add(buttonKpengguna);
             Controls.Add(buttonKstok);
@@ -123,7 +147,9 @@
             Controls.Add(buttonDBadmin);
             Name = "UCkelolaPengguna";
             Size = new Size(1440, 1024);
+            Load += UCkelolaPengguna_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -133,5 +159,7 @@
         private Button buttonKstok;
         private Button buttonKproduk;
         private Button buttonDBadmin;
+        private FlowLayoutPanel flowPengguna;
+        private Label label1;
     }
 }

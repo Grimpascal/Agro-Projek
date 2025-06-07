@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Agro_Projek.Controller;
+using Agro_Projek.Model;
 
 namespace Agro_Projek.View
 {
@@ -45,6 +47,27 @@ namespace Agro_Projek.View
         {
             keluar keluar = new keluar(this.Parent as panelBox);
             keluar.ShowDialog();
+        }
+
+        private void flowPengguna_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void loadMenu()
+        {
+            flowPengguna.Controls.Clear();
+            var list_pengguna = PenggunaController.tampilPengguna();
+            foreach (var pengguna in list_pengguna)
+            {
+                UCtampilanPengguna ucPengguna = new UCtampilanPengguna(pengguna,this);
+                flowPengguna.Controls.Add(ucPengguna);
+            }
+        }
+
+        private void UCkelolaPengguna_Load(object sender, EventArgs e)
+        {
+            loadMenu();
         }
     }
 }
