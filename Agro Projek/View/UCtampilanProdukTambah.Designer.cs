@@ -35,7 +35,7 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             Name = "UCtampilanProdukTambah";
-            Size = new Size(174, 212);
+            Size = new Size(1602, 715);
             ResumeLayout(false);
         }
 
