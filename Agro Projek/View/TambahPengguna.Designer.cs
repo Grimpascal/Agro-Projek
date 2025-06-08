@@ -141,6 +141,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "TambahPengguna";
             Text = "TambahPengguna";
+            Load += TambahPengguna_Load;
             ResumeLayout(false);
             PerformLayout();
         }

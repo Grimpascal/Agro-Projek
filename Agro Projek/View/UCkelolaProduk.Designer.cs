@@ -144,10 +144,10 @@
             // flowListMakanan
             // 
             flowListMakanan.AutoScroll = true;
-            flowListMakanan.BackColor = Color.FromArgb(0, 192, 0);
+            flowListMakanan.BackColor = Color.Transparent;
             flowListMakanan.Location = new Point(308, 318);
             flowListMakanan.Name = "flowListMakanan";
-            flowListMakanan.Size = new Size(940, 418);
+            flowListMakanan.Size = new Size(531, 612);
             flowListMakanan.TabIndex = 12;
             flowListMakanan.Paint += flowListMakanan_Paint;
             // 

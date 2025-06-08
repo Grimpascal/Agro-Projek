@@ -58,7 +58,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
+            BackColor = Color.DarkGray;
             Controls.Add(labelHarga);
             Controls.Add(labelNama);
             Name = "UCtampilanProduk";

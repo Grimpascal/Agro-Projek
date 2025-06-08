@@ -41,5 +41,11 @@ namespace Agro_Projek.View
         {
 
         }
+
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+            editUser editUser = new editUser(int.Parse(labelId.Text));
+            editUser.ShowDialog();
+        }
     }
 }

@@ -62,5 +62,10 @@ namespace Agro_Projek.View
         {
             this.Close();
         }
+
+        private void TambahPengguna_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

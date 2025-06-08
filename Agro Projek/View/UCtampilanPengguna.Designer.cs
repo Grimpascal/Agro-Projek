@@ -79,6 +79,7 @@
             buttonEdit.TabIndex = 3;
             buttonEdit.Text = "Edit";
             buttonEdit.UseVisualStyleBackColor = false;
+            buttonEdit.Click += buttonEdit_Click;
             // 
             // labelId
             // 

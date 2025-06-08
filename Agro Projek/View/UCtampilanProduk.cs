@@ -22,9 +22,10 @@ namespace Agro_Projek.View
             InitializeComponent();
             this.produk = produk;
             this.parentProduk = parentProduk;
+            string harga = produk.harga.ToString();
 
             labelNama.Text = produk.nama_produk;
-            labelHarga.Text = "Rp. " + produk.harga.ToString();
+            labelHarga.Text = $"Rp. {harga}/Kg";
         }
 
         public UCtampilanProduk(Produk produk, UCproduk uCproduk)

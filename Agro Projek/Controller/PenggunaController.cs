@@ -92,6 +92,30 @@ namespace Agro_Projek.Controller
                 }
             }
         }
+
+        public void editPengguna(int userid,string username, string password, string noTelepon)
+        {
+            string query = "UPDATE users SET username = @username, password = @password, no_telepon = @no_telepon WHERE user_id = @userid";
+            using (NpgsqlConnection conn = new NpgsqlConnection(connDb))
+            {
+                try
+                {
+                    conn.Open();
+                    using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@userid", userid);
+                        cmd.Parameters.AddWithValue("@username", username);
+                        cmd.Parameters.AddWithValue("@password", password);
+                        cmd.Parameters.AddWithValue("@no_telepon", noTelepon);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Ada error yang ditemukan : " + ex.Message);
+                }
+            }
+        }
     }
 }
 
