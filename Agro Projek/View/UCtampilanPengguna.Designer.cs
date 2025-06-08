@@ -32,6 +32,7 @@
             labelHp = new Label();
             buttonHapus = new Button();
             buttonEdit = new Button();
+            labelId = new Label();
             SuspendLayout();
             // 
             // labelNama
@@ -39,7 +40,7 @@
             labelNama.AutoSize = true;
             labelNama.BackColor = Color.Transparent;
             labelNama.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelNama.Location = new Point(24, 11);
+            labelNama.Location = new Point(60, 11);
             labelNama.Name = "labelNama";
             labelNama.Size = new Size(65, 28);
             labelNama.TabIndex = 0;
@@ -50,7 +51,7 @@
             labelHp.AutoSize = true;
             labelHp.BackColor = Color.Transparent;
             labelHp.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelHp.Location = new Point(24, 39);
+            labelHp.Location = new Point(60, 39);
             labelHp.Name = "labelHp";
             labelHp.Size = new Size(39, 28);
             labelHp.TabIndex = 1;
@@ -66,6 +67,7 @@
             buttonHapus.TabIndex = 2;
             buttonHapus.Text = "Hapus";
             buttonHapus.UseVisualStyleBackColor = false;
+            buttonHapus.Click += buttonHapus_Click;
             // 
             // buttonEdit
             // 
@@ -78,11 +80,23 @@
             buttonEdit.Text = "Edit";
             buttonEdit.UseVisualStyleBackColor = false;
             // 
+            // labelId
+            // 
+            labelId.AutoSize = true;
+            labelId.BackColor = Color.Transparent;
+            labelId.Location = new Point(13, 29);
+            labelId.Name = "labelId";
+            labelId.Size = new Size(28, 25);
+            labelId.TabIndex = 4;
+            labelId.Text = "Id";
+            labelId.Click += labelId_Click;
+            // 
             // UCtampilanPengguna
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
+            Controls.Add(labelId);
             Controls.Add(buttonEdit);
             Controls.Add(buttonHapus);
             Controls.Add(labelHp);
@@ -99,5 +113,6 @@
         private Label labelHp;
         private Button buttonHapus;
         private Button buttonEdit;
+        private Label labelId;
     }
 }

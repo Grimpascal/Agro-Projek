@@ -23,9 +23,21 @@ namespace Agro_Projek.View
 
             labelNama.Text = login.Username;
             labelHp.Text = login.no_telepon;
+            labelId.Text = login.user_id.ToString();
         }
 
         private void tampilanPengguna_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonHapus_Click(object sender, EventArgs e)
+        {
+            hapusUser hapusUser = new hapusUser(int.Parse(labelId.Text));
+            hapusUser.ShowDialog();
+        }
+
+        private void labelId_Click(object sender, EventArgs e)
         {
 
         }

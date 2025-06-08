@@ -81,5 +81,10 @@ namespace Agro_Projek.View
             mainForm.loadControl(new UCloginAdmin());
             this.Hide();
         }
+
+        private void textPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

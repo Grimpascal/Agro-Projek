@@ -36,6 +36,7 @@
             buttonDBadmin = new Button();
             flowPengguna = new FlowLayoutPanel();
             label1 = new Label();
+            buttonTambah = new Button();
             SuspendLayout();
             // 
             // buttonKeluar
@@ -116,6 +117,7 @@
             // flowPengguna
             // 
             flowPengguna.AllowDrop = true;
+            flowPengguna.BackColor = Color.Transparent;
             flowPengguna.Location = new Point(322, 201);
             flowPengguna.Name = "flowPengguna";
             flowPengguna.Size = new Size(1099, 759);
@@ -133,11 +135,23 @@
             label1.TabIndex = 11;
             label1.Text = "List Pengguna :";
             // 
+            // buttonTambah
+            // 
+            buttonTambah.BackColor = Color.Green;
+            buttonTambah.Location = new Point(1160, 104);
+            buttonTambah.Name = "buttonTambah";
+            buttonTambah.Size = new Size(201, 61);
+            buttonTambah.TabIndex = 12;
+            buttonTambah.Text = "Tambah Pengguna";
+            buttonTambah.UseVisualStyleBackColor = false;
+            buttonTambah.Click += buttonTambah_Click;
+            // 
             // UCkelolaPengguna
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            Controls.Add(buttonTambah);
             Controls.Add(label1);
             Controls.Add(flowPengguna);
             Controls.Add(buttonKeluar);
@@ -161,5 +175,6 @@
         private Button buttonDBadmin;
         private FlowLayoutPanel flowPengguna;
         private Label label1;
+        private Button buttonTambah;
     }
 }

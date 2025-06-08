@@ -8,7 +8,7 @@ namespace Agro_Projek.Model
 {
     public class Login
     {
-        public int UserId { get; set; }
+        public int user_id { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
         public string no_telepon { get; set; }

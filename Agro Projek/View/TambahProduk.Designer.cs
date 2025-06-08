@@ -169,6 +169,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "TambahProduk";
             Text = "TambahProduk";
+            Load += TambahProduk_Load_1;
             ResumeLayout(false);
             PerformLayout();
         }

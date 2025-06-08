@@ -19,8 +19,6 @@ namespace Agro_Projek.View
             InitializeComponent();
             panelBox = form;
             this.StartPosition = FormStartPosition.CenterScreen;
-
-            LoadJenisProduk();
         }
 
         private void LoadJenisProduk()
@@ -110,6 +108,11 @@ namespace Agro_Projek.View
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TambahProduk_Load_1(object sender, EventArgs e)
         {
 
         }

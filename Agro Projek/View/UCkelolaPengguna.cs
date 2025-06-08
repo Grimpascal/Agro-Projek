@@ -60,7 +60,7 @@ namespace Agro_Projek.View
             var list_pengguna = PenggunaController.tampilPengguna();
             foreach (var pengguna in list_pengguna)
             {
-                UCtampilanPengguna ucPengguna = new UCtampilanPengguna(pengguna,this);
+                UCtampilanPengguna ucPengguna = new UCtampilanPengguna(pengguna, this);
                 flowPengguna.Controls.Add(ucPengguna);
             }
         }
@@ -68,6 +68,12 @@ namespace Agro_Projek.View
         private void UCkelolaPengguna_Load(object sender, EventArgs e)
         {
             loadMenu();
+        }
+
+        private void buttonTambah_Click(object sender, EventArgs e)
+        {
+            TambahPengguna tambahPengguna = new TambahPengguna();
+            tambahPengguna.ShowDialog();
         }
     }
 }
