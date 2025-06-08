@@ -38,8 +38,16 @@ namespace Agro_Projek.View
         private void buttonHapus_Click(object sender, EventArgs e)
         {
             PenggunaController penggunaController = new PenggunaController();
-            penggunaController.hapusPengguna(this.userId);
-            this.Close();
+            try
+            {
+                penggunaController.hapusPengguna(this.userId);
+                MessageBox.Show("Pengguna berhasil dihapus!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ada error yang ditemukan : " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+            }
         }
     }
 }

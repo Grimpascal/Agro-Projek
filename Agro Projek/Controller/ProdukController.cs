@@ -92,5 +92,28 @@ namespace Agro_Projek.Controller
             return listProduk;
         }
 
-    }
+        public void ambilData()
+        {
+            using (var conn = new NpgsqlConnection("Host=localhost;Username=postgres;Password=1;Database=Agromart"))
+            {
+                conn.Open();
+                string query = "SELECT * FROM produk";
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Produk produk = new Produk
+                            {
+                                nama_produk = reader.GetString(1),
+                                id_jenis_produk = reader.GetInt32(2),
+                                harga = reader.GetInt32(3),
+                                quantity = reader.GetInt32(4)
+                            };
+                        }
+                    }
+                }
+            }
+        }
 }

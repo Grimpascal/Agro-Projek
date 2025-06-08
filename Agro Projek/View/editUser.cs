@@ -32,6 +32,23 @@ namespace Agro_Projek.View
             string username = textBoxUsername.Text;
             string noTelepon = textBoxHp.Text;
             string password = textBoxPassword.Text;
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(noTelepon) || string.IsNullOrWhiteSpace(password))
+            {
+                MessageBox.Show("Semua field harus diisi!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }else if (string.IsNullOrWhiteSpace(username))
+            {
+                MessageBox.Show("Username harus diisi!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            } else if (string.IsNullOrWhiteSpace(password))
+            {
+                MessageBox.Show("Password harus diisi!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }else if (string.IsNullOrWhiteSpace(noTelepon))
+            {
+                MessageBox.Show("Nomor telepon harus diisi!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
             try
             {
                 penggunaController.editPengguna(this.userId,username, password, noTelepon);
