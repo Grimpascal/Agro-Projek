@@ -31,8 +31,9 @@
             labelHarga = new Label();
             labelNama = new Label();
             labelStok = new Label();
-            button1 = new Button();
-            button2 = new Button();
+            buttonPlus = new Button();
+            buttonMin = new Button();
+            labelid = new Label();
             SuspendLayout();
             // 
             // labelHarga
@@ -68,37 +69,50 @@
             labelStok.TabIndex = 2;
             labelStok.Text = "Stok";
             // 
-            // button1
+            // buttonPlus
             // 
-            button1.BackColor = Color.Green;
-            button1.Location = new Point(148, 166);
-            button1.Name = "button1";
-            button1.Size = new Size(32, 34);
-            button1.TabIndex = 3;
-            button1.Text = "+";
-            button1.UseVisualStyleBackColor = false;
+            buttonPlus.BackColor = Color.Green;
+            buttonPlus.Location = new Point(148, 166);
+            buttonPlus.Name = "buttonPlus";
+            buttonPlus.Size = new Size(32, 34);
+            buttonPlus.TabIndex = 3;
+            buttonPlus.Text = "+";
+            buttonPlus.UseVisualStyleBackColor = false;
+            buttonPlus.Click += buttonPlus_Click;
             // 
-            // button2
+            // buttonMin
             // 
-            button2.BackColor = Color.FromArgb(192, 0, 0);
-            button2.Location = new Point(20, 166);
-            button2.Name = "button2";
-            button2.Size = new Size(32, 34);
-            button2.TabIndex = 4;
-            button2.Text = "-";
-            button2.UseVisualStyleBackColor = false;
+            buttonMin.BackColor = Color.FromArgb(192, 0, 0);
+            buttonMin.Location = new Point(20, 166);
+            buttonMin.Name = "buttonMin";
+            buttonMin.Size = new Size(32, 34);
+            buttonMin.TabIndex = 4;
+            buttonMin.Text = "-";
+            buttonMin.UseVisualStyleBackColor = false;
+            // 
+            // labelid
+            // 
+            labelid.AutoSize = true;
+            labelid.Location = new Point(3, 0);
+            labelid.Name = "labelid";
+            labelid.Size = new Size(28, 25);
+            labelid.TabIndex = 5;
+            labelid.Text = "Id";
             // 
             // UCcontainerProduk
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(button2);
-            Controls.Add(button1);
+            BackColor = Color.FromArgb(255, 224, 192);
+            Controls.Add(labelid);
+            Controls.Add(buttonMin);
+            Controls.Add(buttonPlus);
             Controls.Add(labelStok);
             Controls.Add(labelNama);
             Controls.Add(labelHarga);
             Name = "UCcontainerProduk";
             Size = new Size(196, 234);
+            Load += UCcontainerProduk_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -108,7 +122,8 @@
         private Label labelHarga;
         private Label labelNama;
         private Label labelStok;
-        private Button button1;
-        private Button button2;
+        private Button buttonPlus;
+        private Button buttonMin;
+        private Label labelid;
     }
 }

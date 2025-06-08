@@ -47,5 +47,10 @@ namespace Agro_Projek.View
             editUser editUser = new editUser(int.Parse(labelId.Text));
             editUser.ShowDialog();
         }
+
+        private void UCtampilanPengguna_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -92,8 +92,9 @@ namespace Agro_Projek.Controller
             return listProduk;
         }
 
-        public void ambilData()
+        public static List<Produk> ambilProduk()
         {
+            var listProduk = new List<Produk>();
             using (var conn = new NpgsqlConnection("Host=localhost;Username=postgres;Password=1;Database=Agromart"))
             {
                 conn.Open();
@@ -101,19 +102,36 @@ namespace Agro_Projek.Controller
                 using (var cmd = new NpgsqlCommand(query, conn))
                 {
                     using (var reader = cmd.ExecuteReader())
-                    {
                         while (reader.Read())
                         {
-                            Produk produk = new Produk
+                            var produk = new Produk
                             {
+                                id_produk = reader.GetInt32(0),
                                 nama_produk = reader.GetString(1),
                                 id_jenis_produk = reader.GetInt32(2),
                                 harga = reader.GetInt32(3),
                                 quantity = reader.GetInt32(4)
                             };
+                            listProduk.Add(produk);
                         }
-                    }
+                }
+            }
+            return listProduk;
+        }
+
+        public void tambahStok(int idProduk)
+        {
+            string queryPlus = "UPDATE produk SET quantity = quantity + @jumlah WHERE id_produk = @id";
+            using (var conn = new NpgsqlConnection(connDb))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand(queryPlus, conn))
+                {
+                    cmd.Parameters.AddWithValue("@jumlah", 1);
+                    cmd.Parameters.AddWithValue("@id", idProduk);
+                    cmd.ExecuteNonQuery();
                 }
             }
         }
+    }
 }

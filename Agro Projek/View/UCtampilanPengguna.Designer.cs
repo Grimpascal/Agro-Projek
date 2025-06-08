@@ -104,6 +104,7 @@
             Controls.Add(labelNama);
             Name = "UCtampilanPengguna";
             Size = new Size(1028, 80);
+            Load += UCtampilanPengguna_Load;
             ResumeLayout(false);
             PerformLayout();
         }

@@ -114,9 +114,10 @@
             // 
             // flowProdukUser
             // 
-            flowProdukUser.Location = new Point(340, 306);
+            flowProdukUser.BackColor = Color.Transparent;
+            flowProdukUser.Location = new Point(324, 192);
             flowProdukUser.Name = "flowProdukUser";
-            flowProdukUser.Size = new Size(1072, 608);
+            flowProdukUser.Size = new Size(1072, 651);
             flowProdukUser.TabIndex = 10;
             flowProdukUser.Paint += flowProdukUser_Paint;
             // 
