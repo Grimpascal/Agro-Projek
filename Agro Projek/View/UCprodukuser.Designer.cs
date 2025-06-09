@@ -32,6 +32,7 @@
             labelHarga = new Label();
             labelStok = new Label();
             buttonPesan = new Button();
+            labelIdProduk = new Label();
             SuspendLayout();
             // 
             // labelNama
@@ -78,18 +79,31 @@
             buttonPesan.TabIndex = 3;
             buttonPesan.Text = "Pesan";
             buttonPesan.UseVisualStyleBackColor = false;
+            buttonPesan.Click += buttonPesan_Click;
+            // 
+            // labelIdProduk
+            // 
+            labelIdProduk.AutoSize = true;
+            labelIdProduk.BackColor = Color.Transparent;
+            labelIdProduk.Location = new Point(0, 0);
+            labelIdProduk.Name = "labelIdProduk";
+            labelIdProduk.Size = new Size(85, 25);
+            labelIdProduk.TabIndex = 4;
+            labelIdProduk.Text = "idproduk";
             // 
             // UCprodukuser
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveBorder;
+            Controls.Add(labelIdProduk);
             Controls.Add(buttonPesan);
             Controls.Add(labelStok);
             Controls.Add(labelHarga);
             Controls.Add(labelNama);
             Name = "UCprodukuser";
             Size = new Size(213, 256);
+            Load += UCprodukuser_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -100,5 +114,6 @@
         private Label labelHarga;
         private Label labelStok;
         private Button buttonPesan;
+        private Label labelIdProduk;
     }
 }

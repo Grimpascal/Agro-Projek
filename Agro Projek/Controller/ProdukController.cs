@@ -133,5 +133,28 @@ namespace Agro_Projek.Controller
                 }
             }
         }
+
+        public void keranjang(int userId, int idProduk, int Jumlah)
+        {
+            string query = "INSERT INTO keranjang (user_id, id_produk, jumlah) VALUES (@user_id, @id_produk, @jumlah)";
+            using (var conn = new NpgsqlConnection(connDb))
+            {
+                try
+                {
+                    conn.Open();
+                    using (var cmd = new NpgsqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@user_id", userId);
+                        cmd.Parameters.AddWithValue("@id_produk", idProduk);
+                        cmd.Parameters.AddWithValue("@jumlah", Jumlah);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+        }
     }
 }

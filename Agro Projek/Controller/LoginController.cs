@@ -15,7 +15,7 @@ namespace Agro_Projek.Controller
 
         public bool validasilogin(string username, string password)
         {
-            string connDb = "Host=localhost;Username=postgres;Password=leon;Database=Agromart";
+            string connDb = "Host=localhost;Username=postgres;Password=1;Database=Agromart";
             string query = "SELECT user_id FROM users WHERE username = @username AND password = @password AND role = 'user'";
 
             using (NpgsqlConnection conn = new NpgsqlConnection(connDb))
@@ -46,7 +46,7 @@ namespace Agro_Projek.Controller
 
         public bool validasiloginAdmin(string username, string password)
         {
-            string connDb = "Host=localhost;Username=postgres;Password=leon;Database=Agromart";
+            string connDb = "Host=localhost;Username=postgres;Password=1;Database=Agromart";
             string query = "SELECT user_id FROM users WHERE username = @username AND password = @password AND role = 'admin'";
 
             using (NpgsqlConnection conn = new NpgsqlConnection(connDb))

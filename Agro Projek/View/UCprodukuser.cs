@@ -24,11 +24,23 @@ namespace Agro_Projek.View
             labelNama.Text = produk.nama_produk;
             labelHarga.Text = produk.harga.ToString();
             labelStok.Text = produk.quantity.ToString();
+            labelIdProduk.Text = produk.id_produk.ToString();
         }
 
         private void labelNama_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void UCprodukuser_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonPesan_Click(object sender, EventArgs e)
+        { 
+            pesanProduk pesanProduk = new pesanProduk();
+            pesanProduk.ShowDialog();
         }
     }
 }
