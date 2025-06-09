@@ -114,6 +114,7 @@
             // 
             // flowProdukUser
             // 
+            flowProdukUser.AutoScroll = true;
             flowProdukUser.BackColor = Color.Transparent;
             flowProdukUser.Location = new Point(324, 192);
             flowProdukUser.Name = "flowProdukUser";

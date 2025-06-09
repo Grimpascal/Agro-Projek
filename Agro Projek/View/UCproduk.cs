@@ -54,12 +54,17 @@ namespace Agro_Projek.View
 
         private void UCproduk_Load(object sender, EventArgs e)
         {
+            loadMenu();
+        }
+
+        public void loadMenu()
+        {
             flowProdukUser.Controls.Clear();
-            var list_produk = ProdukController.TampilanProduk();
+            var list_produk = ProdukController.ambilProduk();
             foreach (var produk in list_produk)
             {
-                UCtampilanProduk tampilanProduk = new UCtampilanProduk(produk, this);
-                flowProdukUser.Controls.Add(tampilanProduk);
+                UCprodukuser uCprodukuser = new UCprodukuser(produk, this);
+                flowProdukUser.Controls.Add(uCprodukuser);
             }
         }
 

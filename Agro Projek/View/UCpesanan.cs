@@ -27,7 +27,7 @@ namespace Agro_Projek.View
         private void buttonProduk_Click(object sender, EventArgs e)
         {
             var mainForm = this.Parent as panelBox;
-            mainForm.loadControl(new UCpesanan());
+            mainForm.loadControl(new UCproduk());
             this.Hide();
         }
 
