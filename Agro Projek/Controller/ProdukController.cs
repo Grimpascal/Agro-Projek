@@ -15,7 +15,7 @@ namespace Agro_Projek.Controller
 {
     internal class ProdukController
     {
-        private string connDb = "Host=localhost;Username=postgres;Password=1;Database=Agromart";
+        private string connDb = "Host=localhost;Username=postgres;Password=leon;Database=Agromart";
 
         public void tambah(string nama, int id_jenis, int harga, int quantity)
         {
@@ -71,7 +71,7 @@ namespace Agro_Projek.Controller
         {
             var listProduk = new List<Produk>();
 
-            using (var conn = new NpgsqlConnection("Host=localhost;Username=postgres;Password=1;Database=Agromart"))
+            using (var conn = new NpgsqlConnection("Host=localhost;Username=postgres;Password=leon;Database=Agromart"))
             {
                 conn.Open();
                 string query = "SELECT * FROM produk";

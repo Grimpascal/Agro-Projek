@@ -41,20 +41,20 @@ namespace Agro_Projek.View
             {
                 MessageBox.Show("Login Berhasil", "Notifikasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();
+
                 var mainForm = this.Parent as panelBox;
+
                 if (mainForm != null)
                 {
                     mainForm.loadControl(new UCdashboard());
                 }
-                else
-                {
-                    MessageBox.Show("Akun tidak ditemukan, silahkan klik tombol register", "Notifikasi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    textUsername.Clear();
-                    textPassword.Clear();
-                }
-
+            }
+            else
+            {
+                MessageBox.Show("Maaf, Username atau Kata Sandi Salah", "Login Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void checkPw_CheckedChanged(object sender, EventArgs e)
         {
