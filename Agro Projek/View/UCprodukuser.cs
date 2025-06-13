@@ -16,6 +16,8 @@ namespace Agro_Projek.View
     {
         Produk produk;
         UCproduk UCproduk;
+        pesanProduk pesanProduk;
+        Transaksi transaksi;
         public UCprodukuser(Produk produk, UCproduk uCproduk)
         {
             InitializeComponent();
@@ -39,7 +41,7 @@ namespace Agro_Projek.View
 
         private void buttonPesan_Click(object sender, EventArgs e)
         { 
-            pesanProduk pesanProduk = new pesanProduk();
+            pesanProduk pesanProduk = new pesanProduk(produk);
             pesanProduk.ShowDialog();
         }
     }

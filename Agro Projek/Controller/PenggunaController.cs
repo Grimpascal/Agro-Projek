@@ -11,7 +11,7 @@ namespace Agro_Projek.Controller
 {
     internal class PenggunaController
     {
-        public string connDb = "Host=localhost;Username=postgres;Password=leon;Database=Agromart";
+        public string connDb = "Host=localhost;Username=postgres;Password=1;Database=Agromart";
 
         public static List<Login> tampilPengguna()
         {

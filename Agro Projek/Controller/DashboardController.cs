@@ -11,7 +11,7 @@ namespace Agro_Projek.Controller
 {
     internal class DashboardController
     {
-        private string connDb = "Host=localhost;Username=postgres;Password=leon;Database=Agromart";
+        private string connDb = "Host=localhost;Username=postgres;Password=1;Database=Agromart";
 
         public int produkTotal()
         {

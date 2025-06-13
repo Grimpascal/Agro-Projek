@@ -9,7 +9,7 @@ namespace Agro_Projek.Controller
 {
     internal class registerController
     {
-        private string db = "Host=localhost;Username=postgres;Password=leon;Database=Agromart";
+        private string db = "Host=localhost;Username=postgres;Password=1;Database=Agromart";
 
         public bool cekUser(string username)
         {

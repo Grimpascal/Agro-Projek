@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace Agro_Projek.View
 {
-    public partial class UCtampilanProdukTambah : UserControl
+    public partial class FormTransaksi : Form
     {
-        public UCtampilanProdukTambah()
+        public FormTransaksi()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
+        }
+
+        private void FormTransaksi_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

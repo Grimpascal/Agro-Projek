@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCprodukuser));
             labelNama = new Label();
             labelHarga = new Label();
             labelStok = new Label();
@@ -96,6 +97,7 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveBorder;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             Controls.Add(labelIdProduk);
             Controls.Add(buttonPesan);
             Controls.Add(labelStok);

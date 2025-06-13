@@ -28,66 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            label2 = new Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(pesanProduk));
             textBoxJumlah = new TextBox();
-            buttonKeranjang = new Button();
             buttonPesan = new Button();
             button1 = new Button();
+            labelNamaProduk = new Label();
+            label1 = new Label();
+            comboBox1 = new ComboBox();
+            label2 = new Label();
+            label3 = new Label();
+            textBoxAlamat = new TextBox();
             SuspendLayout();
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(182, 21);
-            label1.Name = "label1";
-            label1.Size = new Size(77, 32);
-            label1.TabIndex = 0;
-            label1.Text = "Pesan";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(30, 100);
-            label2.Name = "label2";
-            label2.Size = new Size(60, 21);
-            label2.TabIndex = 1;
-            label2.Text = "Jumlah";
             // 
             // textBoxJumlah
             // 
-            textBoxJumlah.Location = new Point(30, 124);
+            textBoxJumlah.Location = new Point(177, 144);
             textBoxJumlah.Name = "textBoxJumlah";
-            textBoxJumlah.Size = new Size(364, 31);
+            textBoxJumlah.Size = new Size(453, 31);
             textBoxJumlah.TabIndex = 2;
-            // 
-            // buttonKeranjang
-            // 
-            buttonKeranjang.Location = new Point(44, 180);
-            buttonKeranjang.Name = "buttonKeranjang";
-            buttonKeranjang.Size = new Size(112, 34);
-            buttonKeranjang.TabIndex = 3;
-            buttonKeranjang.Text = "keranjang";
-            buttonKeranjang.UseVisualStyleBackColor = true;
-            buttonKeranjang.Click += buttonKeranjang_Click;
+            textBoxJumlah.TextChanged += textBoxJumlah_TextChanged;
             // 
             // buttonPesan
             // 
-            buttonPesan.Location = new Point(258, 180);
+            buttonPesan.BackColor = Color.Transparent;
+            buttonPesan.FlatAppearance.BorderSize = 0;
+            buttonPesan.FlatStyle = FlatStyle.Flat;
+            buttonPesan.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonPesan.ForeColor = SystemColors.ControlLightLight;
+            buttonPesan.Location = new Point(139, 336);
             buttonPesan.Name = "buttonPesan";
-            buttonPesan.Size = new Size(112, 34);
+            buttonPesan.Size = new Size(519, 34);
             buttonPesan.TabIndex = 4;
             buttonPesan.Text = "Pesan";
-            buttonPesan.UseVisualStyleBackColor = true;
+            buttonPesan.UseVisualStyleBackColor = false;
+            buttonPesan.Click += buttonPesan_Click;
             // 
             // button1
             // 
             button1.BackColor = Color.Red;
-            button1.Location = new Point(397, 19);
+            button1.Location = new Point(656, 76);
             button1.Name = "button1";
             button1.Size = new Size(33, 34);
             button1.TabIndex = 5;
@@ -95,17 +74,80 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
+            // labelNamaProduk
+            // 
+            labelNamaProduk.AutoSize = true;
+            labelNamaProduk.BackColor = Color.Transparent;
+            labelNamaProduk.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelNamaProduk.Location = new Point(420, 76);
+            labelNamaProduk.Name = "labelNamaProduk";
+            labelNamaProduk.Size = new Size(68, 28);
+            labelNamaProduk.TabIndex = 6;
+            labelNamaProduk.Text = "Nama";
+            labelNamaProduk.Click += labelNamaProduk_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Location = new Point(177, 116);
+            label1.Name = "label1";
+            label1.Size = new Size(67, 25);
+            label1.TabIndex = 7;
+            label1.Text = "Jumlah";
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(177, 206);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(453, 33);
+            comboBox1.TabIndex = 8;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Location = new Point(177, 178);
+            label2.Name = "label2";
+            label2.Size = new Size(100, 25);
+            label2.TabIndex = 9;
+            label2.Text = "Pengiriman";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
+            label3.Location = new Point(177, 245);
+            label3.Name = "label3";
+            label3.Size = new Size(68, 25);
+            label3.TabIndex = 11;
+            label3.Text = "Alamat";
+            // 
+            // textBoxAlamat
+            // 
+            textBoxAlamat.Location = new Point(177, 273);
+            textBoxAlamat.Name = "textBoxAlamat";
+            textBoxAlamat.Size = new Size(453, 31);
+            textBoxAlamat.TabIndex = 10;
+            textBoxAlamat.TextChanged += textBoxAlamat_TextChanged;
+            // 
             // pesanProduk
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(452, 247);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            ClientSize = new Size(778, 489);
+            Controls.Add(label3);
+            Controls.Add(textBoxAlamat);
+            Controls.Add(label2);
+            Controls.Add(comboBox1);
+            Controls.Add(label1);
+            Controls.Add(labelNamaProduk);
             Controls.Add(button1);
             Controls.Add(buttonPesan);
-            Controls.Add(buttonKeranjang);
             Controls.Add(textBoxJumlah);
-            Controls.Add(label2);
-            Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "pesanProduk";
             Text = "pesanProduk";
@@ -115,12 +157,15 @@
         }
 
         #endregion
-
-        private Label label1;
-        private Label label2;
         private TextBox textBoxJumlah;
-        private Button buttonKeranjang;
         private Button buttonPesan;
         private Button button1;
+        private Label labelNama;
+        private Label labelNamaProduk;
+        private Label label1;
+        private ComboBox comboBox1;
+        private Label label2;
+        private Label label3;
+        private TextBox textBoxAlamat;
     }
 }

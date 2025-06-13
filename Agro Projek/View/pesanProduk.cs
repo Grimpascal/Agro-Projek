@@ -17,12 +17,15 @@ namespace Agro_Projek.View
         public int userId;
         public Produk produk;
         Login login;
-        public pesanProduk()
+        public pesanProduk(Produk produk)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             this.userId = userId;
             this.produk = produk;
+            labelNamaProduk.Text = produk.nama_produk;
+            comboBox1.Items.Add("COD");
+            comboBox1.Items.Add("Diantar");
         }
 
         private void pesanProduk_Load(object sender, EventArgs e)
@@ -35,21 +38,41 @@ namespace Agro_Projek.View
             this.Close();
         }
 
-        private void buttonKeranjang_Click(object sender, EventArgs e)
+        private void buttonPesan_Click(object sender, EventArgs e)
         {
-            ProdukController produkController = new ProdukController();
-            int idProduk = produk.id_produk; 
-            int jumlah = Convert.ToInt32(textBoxJumlah.Text);
-            if (jumlah <= 0)
+            int jumlah;
+            if (int.TryParse(textBoxJumlah.Text, out jumlah))
             {
-                MessageBox.Show("Jumlah harus lebih dari 0");
-                return;
-            } else if (jumlah > produk.quantity)
-            {
-                MessageBox.Show("Jumlah melebihi stok yang tersedia");
-                return;
+                int totalHarga = produk.harga * jumlah;
+                string alamat = textBoxAlamat.Text;
+                string pengiriman = comboBox1.SelectedItem?.ToString();
+                Transaksi transaksiForm = new Transaksi(produk, jumlah, totalHarga, alamat, pengiriman);
+                transaksiForm.ShowDialog();
+                this.Close();
             }
-            produkController.keranjang(userId,idProduk,jumlah);
+            else
+            {
+                MessageBox.Show("Masukkan jumlah yang valid.");
+            }
+        }
+
+        private void textBoxJumlah_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelNamaProduk_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxAlamat_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

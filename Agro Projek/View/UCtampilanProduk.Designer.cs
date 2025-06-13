@@ -62,7 +62,7 @@
             Controls.Add(labelHarga);
             Controls.Add(labelNama);
             Name = "UCtampilanProduk";
-            Size = new Size(1609, 797);
+            Size = new Size(471, 95);
             Load += tampilanProduk_Load;
             ResumeLayout(false);
             PerformLayout();
