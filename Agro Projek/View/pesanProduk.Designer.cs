@@ -46,7 +46,6 @@
             textBoxJumlah.Name = "textBoxJumlah";
             textBoxJumlah.Size = new Size(453, 31);
             textBoxJumlah.TabIndex = 2;
-            textBoxJumlah.TextChanged += textBoxJumlah_TextChanged;
             // 
             // buttonPesan
             // 
@@ -72,7 +71,6 @@
             button1.TabIndex = 5;
             button1.Text = "X";
             button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
             // 
             // labelNamaProduk
             // 
@@ -84,7 +82,6 @@
             labelNamaProduk.Size = new Size(68, 28);
             labelNamaProduk.TabIndex = 6;
             labelNamaProduk.Text = "Nama";
-            labelNamaProduk.Click += labelNamaProduk_Click;
             // 
             // label1
             // 
@@ -103,7 +100,6 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(453, 33);
             comboBox1.TabIndex = 8;
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // label2
             // 
@@ -131,7 +127,6 @@
             textBoxAlamat.Name = "textBoxAlamat";
             textBoxAlamat.Size = new Size(453, 31);
             textBoxAlamat.TabIndex = 10;
-            textBoxAlamat.TextChanged += textBoxAlamat_TextChanged;
             // 
             // pesanProduk
             // 
@@ -151,7 +146,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "pesanProduk";
             Text = "pesanProduk";
-            Load += pesanProduk_Load;
+            Load += pesanProduk_Load_1;
             ResumeLayout(false);
             PerformLayout();
         }

@@ -95,6 +95,7 @@
             labelTotal.Size = new Size(67, 32);
             labelTotal.TabIndex = 4;
             labelTotal.Text = "Total";
+            labelTotal.Click += labelTotal_Click;
             // 
             // buttonPesan
             // 
@@ -109,6 +110,7 @@
             buttonPesan.TabIndex = 5;
             buttonPesan.Text = "Pesan";
             buttonPesan.UseVisualStyleBackColor = false;
+            buttonPesan.Click += buttonPesan_Click;
             // 
             // buttonBatal
             // 
@@ -123,6 +125,7 @@
             buttonBatal.TabIndex = 6;
             buttonBatal.Text = "Keluar";
             buttonBatal.UseVisualStyleBackColor = false;
+            buttonBatal.Click += buttonBatal_Click;
             // 
             // labelPengiriman
             // 

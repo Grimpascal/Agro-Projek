@@ -40,9 +40,17 @@ namespace Agro_Projek.View
         }
 
         private void buttonPesan_Click(object sender, EventArgs e)
-        { 
-            pesanProduk pesanProduk = new pesanProduk(produk);
+        {
+            if (produk.quantity <= 0)
+            {
+                MessageBox.Show("Maaf, stok produk habis. Tidak dapat memesan saat ini.",
+                                "Stok Kosong", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            pesanProduk pesanProduk = new pesanProduk(this.produk, 1);
             pesanProduk.ShowDialog();
         }
+
     }
 }

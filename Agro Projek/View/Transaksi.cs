@@ -17,18 +17,21 @@ namespace Agro_Projek.View
         public int jumlah;
         public string alamat;
         public string pengiriman;
-        public Transaksi(Produk produk, int jumlah, int totalHarga, string alamat, string pengiriman)
+        int userId;
+        public Transaksi(Produk produk, int jumlah, int totalHarga, string alamat, string pengiriman, int userId)
         {
             InitializeComponent();
-            this.produk = produk;
             labelNama.Text = $"Nama Produk : " + produk.nama_produk;
-            labelHarga.Text = $"Jumlah Produk : " + produk.harga.ToString();
+            labelHarga.Text = $"Harga Produk : " + produk.harga.ToString();
             labelJumlah.Text = $"Jumlah : " + jumlah.ToString();
             labelTotal.Text = $"Total Harga : " + totalHarga.ToString();
-            this.alamat = alamat;
-            this.pengiriman = pengiriman;
             labelAlamat.Text = $"Alamat: {alamat}";
             labelPengiriman.Text = $"Pengiriman: {pengiriman}";
+            this.produk = produk;
+            this.pengiriman = pengiriman;
+            this.alamat = alamat;
+            this.jumlah = jumlah;
+            this.userId = userId;
         }
 
         private void Transaksi_Load(object sender, EventArgs e)
@@ -47,6 +50,25 @@ namespace Agro_Projek.View
         }
 
         private void labelJumlah_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonBatal_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonPesan_Click(object sender, EventArgs e)
+        {
+            int totalHarga = produk.harga * jumlah;
+            int produkId = produk.id_produk;
+            Pembayaran pembayaranForm = new Pembayaran(totalHarga, produkId, jumlah, userId);
+            pembayaranForm.ShowDialog();
+            this.Close();
+        }
+
+        private void labelTotal_Click(object sender, EventArgs e)
         {
 
         }

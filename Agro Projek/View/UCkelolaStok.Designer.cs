@@ -114,6 +114,7 @@
             // 
             // flowStok
             // 
+            flowStok.AutoScroll = true;
             flowStok.BackColor = Color.Transparent;
             flowStok.Location = new Point(330, 226);
             flowStok.Name = "flowStok";

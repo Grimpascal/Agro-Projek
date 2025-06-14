@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -10,6 +10,7 @@ using Agro_Projek.View;
 using Npgsql;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
+using Riwayat = Agro_Projek.Model.Riwayat;
 
 namespace Agro_Projek.Controller
 {
@@ -155,6 +156,89 @@ namespace Agro_Projek.Controller
                     MessageBox.Show("Error: " + ex.Message);
                 }
             }
+        }
+        public void riwayat(int userId, int produkId, int jumlah, int totalHarga)
+        {
+            string query = "INSERT INTO riwayat (user_id, id_produk, jumlah, total_harga) VALUES (@userId, @idProduk, @jumlah, @totalHarga)";
+            using (var conn = new NpgsqlConnection(connDb))
+            {
+                try
+                {
+                    conn.Open();
+                    using (var cmd = new NpgsqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@userId", userId);
+                        cmd.Parameters.AddWithValue("@idProduk", produkId);
+                        cmd.Parameters.AddWithValue("@jumlah", jumlah);
+                        cmd.Parameters.AddWithValue("@totalHarga", totalHarga);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Gagal menyimpan riwayat: " + ex.Message);
+                }
+            }
+        }
+
+        public void kurangiStok(int idProduk, int jumlahDipesan)
+        {
+            string query = "UPDATE produk SET quantity = quantity - @jumlah WHERE id_produk = @id";
+            using (var conn = new NpgsqlConnection(connDb))
+            {
+                try
+                {
+                    conn.Open();
+                    using (var cmd = new NpgsqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@jumlah", jumlahDipesan);
+                        cmd.Parameters.AddWithValue("@id", idProduk);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Gagal mengurangi stok: " + ex.Message);
+                }
+            }
+        }
+        public static List<Riwayat> cekRiwayat(int userId)
+        {
+            var listRiwayat = new List<Riwayat>();
+            using (var conn = new NpgsqlConnection("Host=localhost;Username=postgres;Password=1;Database=Agromart"))
+            {
+                conn.Open();
+                string query = @"
+            SELECT 
+                r.id_riwayat,
+                p.nama_produk,
+                r.jumlah,
+                r.total_harga
+            FROM riwayat r
+            JOIN produk p ON p.id_produk = r.id_produk
+            WHERE r.user_id = @user_id
+        ";
+
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@user_id", userId);
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            var riwayat = new Riwayat
+                            {
+                                id_riwayat = reader.GetInt32(0),
+                                nama_produk = reader.GetString(1),
+                                jumlah = reader.GetInt32(2),
+                                total_harga = reader.GetInt32(3)
+                            };
+                            listRiwayat.Add(riwayat);
+                        }
+                    }
+                }
+            }
+            return listRiwayat;
         }
     }
 }

@@ -13,6 +13,8 @@ namespace Agro_Projek.Controller
         {
         }
 
+        public static int LoggedInUserId { get; private set; }
+
         public bool validasilogin(string username, string password)
         {
             string connDb = "Host=localhost;Username=postgres;Password=1;Database=Agromart";
@@ -31,18 +33,20 @@ namespace Agro_Projek.Controller
                         {
                             if (reader.Read())
                             {
+                                LoggedInUserId = reader.GetInt32(0); // simpan user_id
                                 return true;
                             }
                         }
                     }
                 }
-                catch (Exception ex) 
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Terjadi Error", "Notifikasi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Terjadi Error: " + ex.Message, "Notifikasi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             return false;
         }
+
 
         public bool validasiloginAdmin(string username, string password)
         {
