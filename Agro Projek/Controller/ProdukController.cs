@@ -16,7 +16,7 @@ namespace Agro_Projek.Controller
 {
     internal class ProdukController
     {
-        private string connDb = "Host=localhost;Username=postgres;Password=1;Database=Agromart";
+        private string connDb = "Host=localhost;Username=postgres;Password=leon;Database=Agromart";
 
         public void tambah(string nama, int id_jenis, int harga, int quantity)
         {
@@ -72,7 +72,7 @@ namespace Agro_Projek.Controller
         {
             var listProduk = new List<Produk>();
 
-            using (var conn = new NpgsqlConnection("Host=localhost;Username=postgres;Password=1;Database=Agromart"))
+            using (var conn = new NpgsqlConnection("Host=localhost;Username=postgres;Password=leon;Database=Agromart"))
             {
                 conn.Open();
                 string query = "SELECT * FROM produk";
@@ -96,7 +96,7 @@ namespace Agro_Projek.Controller
         public static List<Produk> ambilProduk()
         {
             var listProduk = new List<Produk>();
-            using (var conn = new NpgsqlConnection("Host=localhost;Username=postgres;Password=1;Database=Agromart"))
+            using (var conn = new NpgsqlConnection("Host=localhost;Username=postgres;Password=leon;Database=Agromart"))
             {
                 conn.Open();
                 string query = "SELECT * FROM produk";
@@ -183,7 +183,38 @@ namespace Agro_Projek.Controller
 
         public void kurangiStok(int idProduk, int jumlahDipesan)
         {
-            string query = "UPDATE produk SET quantity = quantity - @jumlah WHERE id_produk = @id";
+           
+            int stokTersedia = cekStokProduk(idProduk);
+            if (stokTersedia >= jumlahDipesan)
+            {
+                string query = "UPDATE produk SET quantity = quantity - @jumlah WHERE id_produk = @id";
+                using (var conn = new NpgsqlConnection(connDb))
+                {
+                    try
+                    {
+                        conn.Open();
+                        using (var cmd = new NpgsqlCommand(query, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@jumlah", jumlahDipesan);
+                            cmd.Parameters.AddWithValue("@id", idProduk);
+                            cmd.ExecuteNonQuery();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Gagal mengurangi stok: " + ex.Message);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Stok tidak mencukupi untuk jumlah yang diminta.");
+            }
+        }
+
+        public int cekStokProduk(int idProduk)
+        {
+            string query = "SELECT quantity FROM produk WHERE id_produk = @id_produk";
             using (var conn = new NpgsqlConnection(connDb))
             {
                 try
@@ -191,21 +222,23 @@ namespace Agro_Projek.Controller
                     conn.Open();
                     using (var cmd = new NpgsqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@jumlah", jumlahDipesan);
-                        cmd.Parameters.AddWithValue("@id", idProduk);
-                        cmd.ExecuteNonQuery();
+                        cmd.Parameters.AddWithValue("@id_produk", idProduk);
+                        int stok = Convert.ToInt32(cmd.ExecuteScalar());
+                        return stok;
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Gagal mengurangi stok: " + ex.Message);
+                    MessageBox.Show("Error: " + ex.Message);
+                    return 0;
                 }
             }
         }
+
         public static List<Riwayat> cekRiwayat(int userId)
         {
             var listRiwayat = new List<Riwayat>();
-            using (var conn = new NpgsqlConnection("Host=localhost;Username=postgres;Password=1;Database=Agromart"))
+            using (var conn = new NpgsqlConnection("Host=localhost;Username=postgres;Password=leon;Database=Agromart"))
             {
                 conn.Open();
                 string query = @"
@@ -240,5 +273,6 @@ namespace Agro_Projek.Controller
             }
             return listRiwayat;
         }
+
     }
 }

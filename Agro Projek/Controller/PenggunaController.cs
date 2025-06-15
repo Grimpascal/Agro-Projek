@@ -11,11 +11,11 @@ namespace Agro_Projek.Controller
 {
     internal class PenggunaController
     {
-        public string connDb = "Host=localhost;Username=postgres;Password=1;Database=Agromart";
+        public string connDb = "Host=localhost;Username=postgres;Password=leon;Database=Agromart";
 
         public static List<Login> tampilPengguna()
         {
-            string connDb2 = "Host=localhost;Username=postgres;Password=1;Database=Agromart";
+            string connDb2 = "Host=localhost;Username=postgres;Password=leon;Database=Agromart";
             List<Login> listPengguna = new List<Login>();
             string query = "SELECT * FROM users WHERE role = 'user'";
             using (NpgsqlConnection conn = new NpgsqlConnection(connDb2))

@@ -49,6 +49,14 @@ namespace Agro_Projek.View
                     MessageBox.Show("Jumlah harus lebih besar dari 0.");
                     return;
                 }
+
+                int stokTersedia = new ProdukController().cekStokProduk(produk.id_produk);
+                if (jumlah > stokTersedia)
+                {
+                    MessageBox.Show($"Stok tidak mencukupi. Stok tersedia: {stokTersedia}");
+                    return;  
+                }
+
                 int totalHarga = produk.harga * jumlah;
                 string alamat = textBoxAlamat.Text;
                 string pengiriman = comboBox1.SelectedItem?.ToString();
@@ -59,6 +67,9 @@ namespace Agro_Projek.View
                 }
                 int userId = LoginController.LoggedInUserId;
                 Transaksi transaksiForm = new Transaksi(produk, jumlah, totalHarga, alamat, pengiriman, userId);
+
+                new ProdukController().kurangiStok(produk.id_produk, jumlah);
+
                 transaksiForm.ShowDialog();
                 this.Close();
             }
@@ -71,6 +82,8 @@ namespace Agro_Projek.View
                 MessageBox.Show("Masukkan jumlah yang valid.");
             }
         }
+
+
 
 
 
