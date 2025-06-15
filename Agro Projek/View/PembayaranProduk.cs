@@ -50,11 +50,26 @@ namespace Agro_Projek.View
                 try
                 {
                     ProdukController produkController = new ProdukController();
+
+                    int stokTersedia = produkController.cekStokProduk(produkId);
+                    if (stokTersedia < jumlah)
+                    {
+                        MessageBox.Show($"Stok tidak mencukupi. Stok tersedia: {stokTersedia}",
+                                         "Stok Tidak Cukup", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;  
+                    }
+
                     produkController.riwayat(userId, produkId, jumlah, totalHarga);
+
                     produkController.kurangiStok(produkId, jumlah);
+
                     MessageBox.Show("Pembayaran berhasil dilakukan dan stok produk telah diperbarui.",
                                     "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
+                }
+                catch (InvalidOperationException ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 catch (Exception ex)
                 {

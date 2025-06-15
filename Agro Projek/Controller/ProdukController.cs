@@ -183,34 +183,52 @@ namespace Agro_Projek.Controller
 
         public void kurangiStok(int idProduk, int jumlahDipesan)
         {
-           
             int stokTersedia = cekStokProduk(idProduk);
-            if (stokTersedia >= jumlahDipesan)
+
+            
+            if (stokTersedia < jumlahDipesan)
             {
-                string query = "UPDATE produk SET quantity = quantity - @jumlah WHERE id_produk = @id";
-                using (var conn = new NpgsqlConnection(connDb))
+                MessageBox.Show($"Stok tidak mencukupi untuk jumlah yang diminta. Stok tersedia: {stokTersedia}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; 
+            }
+
+           
+            string query = "UPDATE produk SET quantity = quantity - @jumlah WHERE id_produk = @id";
+            using (var conn = new NpgsqlConnection(connDb))
+            {
+                conn.Open();
+
+                using (var transaction = conn.BeginTransaction())
                 {
                     try
                     {
-                        conn.Open();
                         using (var cmd = new NpgsqlCommand(query, conn))
                         {
                             cmd.Parameters.AddWithValue("@jumlah", jumlahDipesan);
                             cmd.Parameters.AddWithValue("@id", idProduk);
                             cmd.ExecuteNonQuery();
                         }
+
+                        transaction.Commit();
+
+                        MessageBox.Show("Pembayaran berhasil dilakukan dan stok produk telah diperbarui.", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Gagal mengurangi stok: " + ex.Message);
+                        transaction.Rollback();
+                        MessageBox.Show("Gagal mengurangi stok: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
-            else
-            {
-                MessageBox.Show("Stok tidak mencukupi untuk jumlah yang diminta.");
-            }
         }
+
+
+
+
+
+
+
+
 
         public int cekStokProduk(int idProduk)
         {
@@ -224,6 +242,7 @@ namespace Agro_Projek.Controller
                     {
                         cmd.Parameters.AddWithValue("@id_produk", idProduk);
                         int stok = Convert.ToInt32(cmd.ExecuteScalar());
+                        Console.WriteLine($"Stok produk ID {idProduk}: {stok}"); 
                         return stok;
                     }
                 }
@@ -234,6 +253,7 @@ namespace Agro_Projek.Controller
                 }
             }
         }
+
 
         public static List<Riwayat> cekRiwayat(int userId)
         {
