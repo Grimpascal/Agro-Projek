@@ -31,10 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCriwayat));
             buttonKeluar = new Button();
             buttonRiwayat = new Button();
-            buttonPesanan = new Button();
             buttonProduk = new Button();
-            buttonDB = new Button();
             flowRiwayat = new FlowLayoutPanel();
+            label1 = new Label();
             SuspendLayout();
             // 
             // buttonKeluar
@@ -44,7 +43,7 @@
             buttonKeluar.FlatStyle = FlatStyle.Flat;
             buttonKeluar.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonKeluar.ForeColor = Color.White;
-            buttonKeluar.Location = new Point(0, 702);
+            buttonKeluar.Location = new Point(0, 604);
             buttonKeluar.Name = "buttonKeluar";
             buttonKeluar.Size = new Size(276, 70);
             buttonKeluar.TabIndex = 9;
@@ -59,28 +58,13 @@
             buttonRiwayat.FlatStyle = FlatStyle.Flat;
             buttonRiwayat.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonRiwayat.ForeColor = Color.White;
-            buttonRiwayat.Location = new Point(0, 611);
+            buttonRiwayat.Location = new Point(0, 519);
             buttonRiwayat.Name = "buttonRiwayat";
             buttonRiwayat.Size = new Size(276, 70);
             buttonRiwayat.TabIndex = 8;
             buttonRiwayat.Text = "Riwayat";
             buttonRiwayat.UseVisualStyleBackColor = false;
             buttonRiwayat.Click += buttonRiwayat_Click;
-            // 
-            // buttonPesanan
-            // 
-            buttonPesanan.BackColor = Color.Transparent;
-            buttonPesanan.FlatAppearance.BorderSize = 0;
-            buttonPesanan.FlatStyle = FlatStyle.Flat;
-            buttonPesanan.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonPesanan.ForeColor = Color.White;
-            buttonPesanan.Location = new Point(0, 519);
-            buttonPesanan.Name = "buttonPesanan";
-            buttonPesanan.Size = new Size(276, 70);
-            buttonPesanan.TabIndex = 7;
-            buttonPesanan.Text = "Pesanan";
-            buttonPesanan.UseVisualStyleBackColor = false;
-            buttonPesanan.Click += buttonPesanan_Click;
             // 
             // buttonProduk
             // 
@@ -97,21 +81,6 @@
             buttonProduk.UseVisualStyleBackColor = false;
             buttonProduk.Click += buttonProduk_Click;
             // 
-            // buttonDB
-            // 
-            buttonDB.BackColor = Color.Transparent;
-            buttonDB.FlatAppearance.BorderSize = 0;
-            buttonDB.FlatStyle = FlatStyle.Flat;
-            buttonDB.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonDB.ForeColor = Color.White;
-            buttonDB.Location = new Point(0, 338);
-            buttonDB.Name = "buttonDB";
-            buttonDB.Size = new Size(276, 70);
-            buttonDB.TabIndex = 5;
-            buttonDB.Text = "Dashboard";
-            buttonDB.UseVisualStyleBackColor = false;
-            buttonDB.Click += buttonDB_Click;
-            // 
             // flowRiwayat
             // 
             flowRiwayat.BackColor = Color.Transparent;
@@ -121,30 +90,40 @@
             flowRiwayat.TabIndex = 10;
             flowRiwayat.Paint += flowRiwayat_Paint;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(341, 161);
+            label1.Name = "label1";
+            label1.Size = new Size(190, 38);
+            label1.TabIndex = 12;
+            label1.Text = "List Riwayat :";
+            // 
             // UCriwayat
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            Controls.Add(label1);
             Controls.Add(flowRiwayat);
             Controls.Add(buttonKeluar);
             Controls.Add(buttonRiwayat);
-            Controls.Add(buttonPesanan);
             Controls.Add(buttonProduk);
-            Controls.Add(buttonDB);
             Name = "UCriwayat";
             Size = new Size(1440, 1024);
             Load += UCriwayat_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private Button buttonKeluar;
         private Button buttonRiwayat;
-        private Button buttonPesanan;
         private Button buttonProduk;
-        private Button buttonDB;
         private FlowLayoutPanel flowRiwayat;
+        private Label label1;
     }
 }

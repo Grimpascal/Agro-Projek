@@ -30,11 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCproduk));
             buttonKeluar = new Button();
-            buttonRiwayat = new Button();
-            buttonPesanan = new Button();
             buttonProduk = new Button();
-            buttonDB = new Button();
             flowProdukUser = new FlowLayoutPanel();
+            buttonRiwayat = new Button();
+            label1 = new Label();
             SuspendLayout();
             // 
             // buttonKeluar
@@ -44,43 +43,13 @@
             buttonKeluar.FlatStyle = FlatStyle.Flat;
             buttonKeluar.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonKeluar.ForeColor = Color.White;
-            buttonKeluar.Location = new Point(0, 702);
+            buttonKeluar.Location = new Point(0, 602);
             buttonKeluar.Name = "buttonKeluar";
             buttonKeluar.Size = new Size(276, 70);
             buttonKeluar.TabIndex = 9;
             buttonKeluar.Text = "Keluar";
             buttonKeluar.UseVisualStyleBackColor = false;
             buttonKeluar.Click += buttonKeluar_Click;
-            // 
-            // buttonRiwayat
-            // 
-            buttonRiwayat.BackColor = Color.Transparent;
-            buttonRiwayat.FlatAppearance.BorderSize = 0;
-            buttonRiwayat.FlatStyle = FlatStyle.Flat;
-            buttonRiwayat.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonRiwayat.ForeColor = Color.White;
-            buttonRiwayat.Location = new Point(0, 611);
-            buttonRiwayat.Name = "buttonRiwayat";
-            buttonRiwayat.Size = new Size(276, 70);
-            buttonRiwayat.TabIndex = 8;
-            buttonRiwayat.Text = "Riwayat";
-            buttonRiwayat.UseVisualStyleBackColor = false;
-            buttonRiwayat.Click += buttonRiwayat_Click;
-            // 
-            // buttonPesanan
-            // 
-            buttonPesanan.BackColor = Color.Transparent;
-            buttonPesanan.FlatAppearance.BorderSize = 0;
-            buttonPesanan.FlatStyle = FlatStyle.Flat;
-            buttonPesanan.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonPesanan.ForeColor = Color.White;
-            buttonPesanan.Location = new Point(0, 519);
-            buttonPesanan.Name = "buttonPesanan";
-            buttonPesanan.Size = new Size(276, 70);
-            buttonPesanan.TabIndex = 7;
-            buttonPesanan.Text = "Pesanan";
-            buttonPesanan.UseVisualStyleBackColor = false;
-            buttonPesanan.Click += buttonPesanan_Click;
             // 
             // buttonProduk
             // 
@@ -97,55 +66,65 @@
             buttonProduk.UseVisualStyleBackColor = false;
             buttonProduk.Click += buttonProduk_Click;
             // 
-            // buttonDB
-            // 
-            buttonDB.BackColor = Color.Transparent;
-            buttonDB.FlatAppearance.BorderSize = 0;
-            buttonDB.FlatStyle = FlatStyle.Flat;
-            buttonDB.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonDB.ForeColor = Color.White;
-            buttonDB.Location = new Point(0, 338);
-            buttonDB.Name = "buttonDB";
-            buttonDB.Size = new Size(276, 70);
-            buttonDB.TabIndex = 5;
-            buttonDB.Text = "Dashboard";
-            buttonDB.UseVisualStyleBackColor = false;
-            buttonDB.Click += buttonDB_Click;
-            // 
             // flowProdukUser
             // 
             flowProdukUser.AutoScroll = true;
             flowProdukUser.BackColor = Color.Transparent;
-            flowProdukUser.Location = new Point(324, 192);
+            flowProdukUser.Location = new Point(324, 92);
             flowProdukUser.Name = "flowProdukUser";
             flowProdukUser.Size = new Size(1072, 651);
             flowProdukUser.TabIndex = 10;
             flowProdukUser.Paint += flowProdukUser_Paint;
+            // 
+            // buttonRiwayat
+            // 
+            buttonRiwayat.BackColor = Color.Transparent;
+            buttonRiwayat.FlatAppearance.BorderSize = 0;
+            buttonRiwayat.FlatStyle = FlatStyle.Flat;
+            buttonRiwayat.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonRiwayat.ForeColor = Color.White;
+            buttonRiwayat.Location = new Point(0, 511);
+            buttonRiwayat.Name = "buttonRiwayat";
+            buttonRiwayat.Size = new Size(276, 70);
+            buttonRiwayat.TabIndex = 8;
+            buttonRiwayat.Text = "Riwayat";
+            buttonRiwayat.UseVisualStyleBackColor = false;
+            buttonRiwayat.Click += buttonRiwayat_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(324, 51);
+            label1.Name = "label1";
+            label1.Size = new Size(181, 38);
+            label1.TabIndex = 11;
+            label1.Text = "List Produk :";
             // 
             // UCproduk
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            Controls.Add(label1);
             Controls.Add(flowProdukUser);
             Controls.Add(buttonKeluar);
             Controls.Add(buttonRiwayat);
-            Controls.Add(buttonPesanan);
             Controls.Add(buttonProduk);
-            Controls.Add(buttonDB);
             Name = "UCproduk";
             Size = new Size(1440, 1024);
             Load += UCproduk_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private Button buttonKeluar;
-        private Button buttonRiwayat;
-        private Button buttonPesanan;
         private Button buttonProduk;
-        private Button buttonDB;
         private FlowLayoutPanel flowProdukUser;
+        private Button buttonRiwayat;
+        private Label label1;
     }
 }

@@ -43,7 +43,7 @@
             buttonDB.FlatStyle = FlatStyle.Flat;
             buttonDB.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonDB.ForeColor = Color.White;
-            buttonDB.Location = new Point(0, 338);
+            buttonDB.Location = new Point(302, 242);
             buttonDB.Name = "buttonDB";
             buttonDB.Size = new Size(276, 70);
             buttonDB.TabIndex = 0;

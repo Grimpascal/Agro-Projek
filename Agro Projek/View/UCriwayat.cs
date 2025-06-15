@@ -21,24 +21,10 @@ namespace Agro_Projek.View
             loadMenu();
         }
 
-        private void buttonDB_Click(object sender, EventArgs e)
-        {
-            var mainForm = this.Parent as panelBox;
-            mainForm.loadControl(new UCdashboard());
-            this.Hide();
-        }
-
         private void buttonProduk_Click(object sender, EventArgs e)
         {
             var mainForm = this.Parent as panelBox;
             mainForm.loadControl(new UCproduk());
-            this.Hide();
-        }
-
-        private void buttonPesanan_Click(object sender, EventArgs e)
-        {
-            var mainForm = this.Parent as panelBox;
-            mainForm.loadControl(new UCpesanan());
             this.Hide();
         }
 

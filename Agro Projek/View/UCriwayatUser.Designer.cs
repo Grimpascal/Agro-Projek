@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCriwayatUser));
             labelProduk = new Label();
             labelJumlah = new Label();
             labelHarga = new Label();
@@ -37,7 +38,7 @@
             // 
             labelProduk.AutoSize = true;
             labelProduk.BackColor = Color.Transparent;
-            labelProduk.Location = new Point(26, 26);
+            labelProduk.Location = new Point(37, 26);
             labelProduk.Name = "labelProduk";
             labelProduk.Size = new Size(69, 25);
             labelProduk.TabIndex = 0;
@@ -47,7 +48,7 @@
             // 
             labelJumlah.AutoSize = true;
             labelJumlah.BackColor = Color.Transparent;
-            labelJumlah.Location = new Point(209, 26);
+            labelJumlah.Location = new Point(229, 26);
             labelJumlah.Name = "labelJumlah";
             labelJumlah.Size = new Size(67, 25);
             labelJumlah.TabIndex = 1;
@@ -57,7 +58,7 @@
             // 
             labelHarga.AutoSize = true;
             labelHarga.BackColor = Color.Transparent;
-            labelHarga.Location = new Point(410, 26);
+            labelHarga.Location = new Point(425, 26);
             labelHarga.Name = "labelHarga";
             labelHarga.Size = new Size(57, 25);
             labelHarga.TabIndex = 2;
@@ -67,6 +68,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             Controls.Add(labelHarga);
             Controls.Add(labelJumlah);
             Controls.Add(labelProduk);

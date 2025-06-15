@@ -46,7 +46,7 @@ namespace Agro_Projek.View
 
                 if (mainForm != null)
                 {
-                    mainForm.loadControl(new UCdashboard());
+                    mainForm.loadControl(new UCproduk());
                 }
             }
             else

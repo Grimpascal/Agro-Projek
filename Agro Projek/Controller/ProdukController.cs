@@ -16,7 +16,7 @@ namespace Agro_Projek.Controller
 {
     internal class ProdukController
     {
-        private string connDb = "Host=localhost;Username=postgres;Password=leon;Database=Agromart";
+        private string connDb = "Host=localhost;Username=postgres;Password=1;Database=Agromart";
 
         public void tambah(string nama, int id_jenis, int harga, int quantity)
         {
@@ -72,7 +72,7 @@ namespace Agro_Projek.Controller
         {
             var listProduk = new List<Produk>();
 
-            using (var conn = new NpgsqlConnection("Host=localhost;Username=postgres;Password=leon;Database=Agromart"))
+            using (var conn = new NpgsqlConnection("Host=localhost;Username=postgres;Password=1;Database=Agromart"))
             {
                 conn.Open();
                 string query = "SELECT * FROM produk";
@@ -96,7 +96,7 @@ namespace Agro_Projek.Controller
         public static List<Produk> ambilProduk()
         {
             var listProduk = new List<Produk>();
-            using (var conn = new NpgsqlConnection("Host=localhost;Username=postgres;Password=leon;Database=Agromart"))
+            using (var conn = new NpgsqlConnection("Host=localhost;Username=postgres;Password=1;Database=Agromart"))
             {
                 conn.Open();
                 string query = "SELECT * FROM produk";
@@ -258,7 +258,7 @@ namespace Agro_Projek.Controller
         public static List<Riwayat> cekRiwayat(int userId)
         {
             var listRiwayat = new List<Riwayat>();
-            using (var conn = new NpgsqlConnection("Host=localhost;Username=postgres;Password=leon;Database=Agromart"))
+            using (var conn = new NpgsqlConnection("Host=localhost;Username=postgres;Password=1;Database=Agromart"))
             {
                 conn.Open();
                 string query = @"
