@@ -129,6 +129,7 @@
             labelProduk.Size = new Size(38, 45);
             labelProduk.TabIndex = 5;
             labelProduk.Text = "0";
+            labelProduk.Click += labelProduk_Click;
             // 
             // produk
             // 

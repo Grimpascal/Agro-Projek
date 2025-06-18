@@ -15,9 +15,11 @@ namespace Agro_Projek.View
     public partial class UCriwayat : UserControl
     {
         Riwayat Riwayat;
+        ProdukController ProdukController;
         public UCriwayat()
         {
             InitializeComponent();
+            this.ProdukController = new ProdukController();
             loadMenu();
         }
 

@@ -13,9 +13,11 @@ namespace Agro_Projek.View
 {
     public partial class UCkelolaProduk : UserControl
     {
+        ProdukController ProdukController;
         public UCkelolaProduk()
         {
             InitializeComponent();
+            this.ProdukController = new ProdukController();
         }
 
 

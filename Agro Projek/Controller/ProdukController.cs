@@ -14,7 +14,7 @@ using Riwayat = Agro_Projek.Model.Riwayat;
 
 namespace Agro_Projek.Controller
 {
-    internal class ProdukController
+    internal class ProdukController : IProdukController
     {
         private string connDb = "Host=localhost;Username=postgres;Password=1;Database=Agromart";
 
@@ -68,11 +68,11 @@ namespace Agro_Projek.Controller
             }
         }
 
-        public static List<Produk> TampilanProduk()
+        public List<Produk> TampilanProduk()
         {
             var listProduk = new List<Produk>();
 
-            using (var conn = new NpgsqlConnection("Host=localhost;Username=postgres;Password=1;Database=Agromart"))
+            using (var conn = new NpgsqlConnection(connDb))
             {
                 conn.Open();
                 string query = "SELECT * FROM produk";
@@ -93,10 +93,10 @@ namespace Agro_Projek.Controller
             return listProduk;
         }
 
-        public static List<Produk> ambilProduk()
+        public List<Produk> ambilProduk()
         {
             var listProduk = new List<Produk>();
-            using (var conn = new NpgsqlConnection("Host=localhost;Username=postgres;Password=1;Database=Agromart"))
+            using (var conn = new NpgsqlConnection(connDb))
             {
                 conn.Open();
                 string query = "SELECT * FROM produk";
@@ -255,10 +255,10 @@ namespace Agro_Projek.Controller
         }
 
 
-        public static List<Riwayat> cekRiwayat(int userId)
+        public List<Riwayat> cekRiwayat(int userId)
         {
             var listRiwayat = new List<Riwayat>();
-            using (var conn = new NpgsqlConnection("Host=localhost;Username=postgres;Password=1;Database=Agromart"))
+            using (var conn = new NpgsqlConnection(connDb))
             {
                 conn.Open();
                 string query = @"

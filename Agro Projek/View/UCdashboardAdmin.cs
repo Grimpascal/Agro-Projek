@@ -58,5 +58,10 @@ namespace Agro_Projek.View
             int totalPengguna = dashboardController.penggunaTotal();
             labelPengguna.Text = totalPengguna.ToString();
         }
+
+        private void labelProduk_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

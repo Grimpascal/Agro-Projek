@@ -14,7 +14,7 @@ namespace Agro_Projek.View
 {
     public partial class UCprodukuser : UserControl
     {
-        Produk produk;
+        private Produk produk;
         UCproduk UCproduk;
         pesanProduk pesanProduk;
         Transaksi transaksi;
@@ -23,6 +23,11 @@ namespace Agro_Projek.View
             InitializeComponent();
             this.produk = produk;
             this.UCproduk = uCproduk;
+            LoadData();
+        }
+
+        public void LoadData()
+        {
             labelNama.Text = produk.nama_produk;
             labelHarga.Text = produk.harga.ToString();
             labelStok.Text = produk.quantity.ToString();

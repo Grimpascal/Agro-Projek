@@ -14,9 +14,11 @@ namespace Agro_Projek.View
 {
     public partial class UCkelolaPengguna : UserControl
     {
+        PenggunaController PenggunaController;
         public UCkelolaPengguna()
         {
             InitializeComponent();
+            this.PenggunaController = new PenggunaController();
         }
 
         private void buttonDBadmin_Click(object sender, EventArgs e)

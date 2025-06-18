@@ -11,15 +11,20 @@ using Agro_Projek.Model;
 
 namespace Agro_Projek.View
 {
-    public partial class UCriwayatUser : UserControl
+    public partial class UCriwayatUser : UserControl,IManage.ILoad
     {
-        Riwayat riwayat;
+        private Riwayat riwayat;
         UCriwayat uCriwayat;
 
         public UCriwayatUser(Riwayat riwayat)
         {
             InitializeComponent();
+            this.riwayat = riwayat;
+            LoadData();
+        }
 
+        public void LoadData()
+        {
             labelProduk.Text = riwayat.nama_produk;
             labelJumlah.Text = riwayat.jumlah.ToString();
             labelHarga.Text = riwayat.total_harga.ToString();

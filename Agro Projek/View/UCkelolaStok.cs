@@ -13,10 +13,11 @@ namespace Agro_Projek.View
 {
     public partial class UCkelolaStok : UserControl
     {
-        ProdukController produkController;
+        ProdukController ProdukController;
         public UCkelolaStok()
         {
             InitializeComponent();
+            this.ProdukController = new ProdukController();
         }
 
         private void buttonDBadmin_Click(object sender, EventArgs e)
