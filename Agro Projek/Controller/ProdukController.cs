@@ -150,28 +150,6 @@ namespace Agro_Projek.Controller
             }
         }
 
-        public void keranjang(int userId, int idProduk, int Jumlah)
-        {
-            string query = "INSERT INTO keranjang (user_id, id_produk, jumlah) VALUES (@user_id, @id_produk, @jumlah)";
-            using (var conn = new NpgsqlConnection(connDb))
-            {
-                try
-                {
-                    conn.Open();
-                    using (var cmd = new NpgsqlCommand(query, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@user_id", userId);
-                        cmd.Parameters.AddWithValue("@id_produk", idProduk);
-                        cmd.Parameters.AddWithValue("@jumlah", Jumlah);
-                        cmd.ExecuteNonQuery();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: " + ex.Message);
-                }
-            }
-        }
         public void riwayat(int userId, int produkId, int jumlah, int totalHarga)
         {
             string query = "INSERT INTO riwayat (user_id, id_produk, jumlah, total_harga) VALUES (@userId, @idProduk, @jumlah, @totalHarga)";
@@ -198,16 +176,12 @@ namespace Agro_Projek.Controller
 
         public void kurangiStok(int idProduk, int jumlahDipesan)
         {
-            int stokTersedia = cekStokProduk(idProduk);
-
-            
+            int stokTersedia = cekStokProduk(idProduk);   
             if (stokTersedia < jumlahDipesan)
             {
                 MessageBox.Show($"Stok tidak mencukupi untuk jumlah yang diminta. Stok tersedia: {stokTersedia}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return; 
-            }
-
-           
+            }      
             string query = "UPDATE produk SET quantity = quantity - @jumlah WHERE id_produk = @id";
             using (var conn = new NpgsqlConnection(connDb))
             {
@@ -237,14 +211,6 @@ namespace Agro_Projek.Controller
             }
         }
 
-
-
-
-
-
-
-
-
         public int cekStokProduk(int idProduk)
         {
             string query = "SELECT quantity FROM produk WHERE id_produk = @id_produk";
@@ -268,7 +234,6 @@ namespace Agro_Projek.Controller
                 }
             }
         }
-
 
         public List<Riwayat> cekRiwayat(int userId)
         {

@@ -36,16 +36,15 @@ namespace Agro_Projek.View
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();  // This will close the form when the custom button is clicked
+            this.Close();
         }
 
         private void pesanProduk_FormClosing(object sender, FormClosingEventArgs e)
         {
-            // Optional: Show confirmation message before closing
             DialogResult result = MessageBox.Show("Are you sure you want to close?", "Confirm Close", MessageBoxButtons.YesNo);
             if (result == DialogResult.No)
             {
-                e.Cancel = true; // Cancel the close operation
+                e.Cancel = true;
             }
         }
 
@@ -60,12 +59,10 @@ namespace Agro_Projek.View
                     MessageBox.Show("Jumlah harus lebih besar dari 0.");
                     return;
                 }
-
-                // Check if the user selects 'Diantar' and the address is empty
                 if (comboBox1.SelectedItem.ToString() == "Diantar" && string.IsNullOrWhiteSpace(textBoxAlamat.Text))
                 {
                     MessageBox.Show("Alamat harus diisi jika pengiriman menggunakan 'Diantar'.");
-                    return;  // Stop further processing if address is empty
+                    return;
                 }
 
                 int stokTersedia = new ProdukController().cekStokProduk(produk.id_produk);
@@ -87,9 +84,6 @@ namespace Agro_Projek.View
 
                 int userId = LoginController.LoggedInUserId;
                 Transaksi transaksiForm = new Transaksi(produk, jumlah, totalHarga, alamat, pengiriman, userId);
-
-                // Do not call kurangiStok here. It will be done in the PembayaranProduk form after successful payment.
-
                 transaksiForm.ShowDialog();
                 this.Close();
             }

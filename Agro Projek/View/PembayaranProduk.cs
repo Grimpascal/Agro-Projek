@@ -20,6 +20,7 @@ namespace Agro_Projek.View
         int produkId;
         int jumlah;
         int userId;
+        ProdukController produkController = new ProdukController();
         public PembayaranProduk(string metodePembayaran, string namaBayar, int totalHarga, int produkId, int jumlah, int userId)
         {
             InitializeComponent();
@@ -49,20 +50,8 @@ namespace Agro_Projek.View
             {
                 try
                 {
-                    ProdukController produkController = new ProdukController();
-
-                    int stokTersedia = produkController.cekStokProduk(produkId);
-                    if (stokTersedia < jumlah)
-                    {
-                        MessageBox.Show($"Stok tidak mencukupi. Stok tersedia: {stokTersedia}",
-                                         "Stok Tidak Cukup", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;  
-                    }
-
                     produkController.riwayat(userId, produkId, jumlah, totalHarga);
-
                     produkController.kurangiStok(produkId, jumlah);
-
                     MessageBox.Show("Pembayaran berhasil dilakukan dan stok produk telah diperbarui.",
                                     "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
