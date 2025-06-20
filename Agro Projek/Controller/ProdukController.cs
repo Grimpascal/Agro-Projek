@@ -135,8 +135,14 @@ namespace Agro_Projek.Controller
             }
         }
 
-        public void kurangiStok(int idProduk)
+        public void kurangStokProduk(int idProduk)
         {
+            int stokTersedia = cekStokProduk(idProduk);
+            if (stokTersedia <= 0)
+            {
+                MessageBox.Show("Tidak bisa mengurangi stok!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             string queryKurang = "UPDATE produk SET quantity = quantity - @jumlah WHERE id_produk = @id";
             using (var conn = new NpgsqlConnection(connDb))
             {
@@ -148,7 +154,10 @@ namespace Agro_Projek.Controller
                     cmd.ExecuteNonQuery();
                 }
             }
+
+            MessageBox.Show("Stok berhasil dikurangi", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
 
         public void riwayat(int userId, int produkId, int jumlah, int totalHarga)
         {

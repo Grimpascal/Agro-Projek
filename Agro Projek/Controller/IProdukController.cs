@@ -13,7 +13,7 @@ namespace Agro_Projek.Controller
         bool cekNamaProduk(string namaProduk);
         List<Produk> ambilProduk();
         void tambahStok(int idProduk);
-        void kurangiStok(int idProduk);
+        void kurangStokProduk(int idProduk);
         void kurangiStok(int idProduk, int jumlahDipesan);
     }
 }

@@ -42,15 +42,17 @@ namespace Agro_Projek.View
         private void buttonMin_Click(object sender, EventArgs e)
         {
             ProdukController produkController = new ProdukController();
-            produkController.kurangiStok(int.Parse(labelid.Text));
+            produkController.kurangStokProduk(int.Parse(labelid.Text));
+
             if (produk.quantity > 0)
             {
                 produk.quantity -= 1;
             }
             else
             {
-                MessageBox.Show("Stok tidak boleh kurang dari 0");
+                produk.quantity = 0;
             }
         }
+
     }
 }
