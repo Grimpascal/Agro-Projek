@@ -135,6 +135,21 @@ namespace Agro_Projek.Controller
             }
         }
 
+        public void kurangiStok(int idProduk)
+        {
+            string queryKurang = "UPDATE produk SET quantity = quantity - @jumlah WHERE id_produk = @id";
+            using (var conn = new NpgsqlConnection(connDb))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand(queryKurang, conn))
+                {
+                    cmd.Parameters.AddWithValue("@jumlah", 1);
+                    cmd.Parameters.AddWithValue("@id", idProduk);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
         public void keranjang(int userId, int idProduk, int Jumlah)
         {
             string query = "INSERT INTO keranjang (user_id, id_produk, jumlah) VALUES (@user_id, @id_produk, @jumlah)";

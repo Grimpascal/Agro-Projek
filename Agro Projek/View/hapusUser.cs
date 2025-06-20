@@ -42,6 +42,7 @@ namespace Agro_Projek.View
             {
                 penggunaController.hapusPengguna(this.userId);
                 MessageBox.Show("Pengguna berhasil dihapus!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
             catch (Exception ex)
             {

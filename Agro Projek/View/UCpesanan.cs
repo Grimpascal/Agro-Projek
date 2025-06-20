@@ -17,13 +17,6 @@ namespace Agro_Projek.View
             InitializeComponent();
         }
 
-        private void buttonDB_Click(object sender, EventArgs e)
-        {
-            var mainForm = this.Parent as panelBox;
-            mainForm.loadControl(new UCdashboard());
-            this.Hide();
-        }
-
         private void buttonProduk_Click(object sender, EventArgs e)
         {
             var mainForm = this.Parent as panelBox;

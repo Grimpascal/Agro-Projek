@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCtampilanPengguna));
             labelNama = new Label();
             labelHp = new Label();
             buttonHapus = new Button();
@@ -40,6 +41,7 @@
             labelNama.AutoSize = true;
             labelNama.BackColor = Color.Transparent;
             labelNama.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelNama.ForeColor = SystemColors.ButtonHighlight;
             labelNama.Location = new Point(60, 11);
             labelNama.Name = "labelNama";
             labelNama.Size = new Size(65, 28);
@@ -73,7 +75,7 @@
             // 
             buttonEdit.BackColor = Color.FromArgb(0, 192, 0);
             buttonEdit.FlatStyle = FlatStyle.Flat;
-            buttonEdit.Location = new Point(771, 24);
+            buttonEdit.Location = new Point(781, 24);
             buttonEdit.Name = "buttonEdit";
             buttonEdit.Size = new Size(109, 34);
             buttonEdit.TabIndex = 3;
@@ -85,9 +87,10 @@
             // 
             labelId.AutoSize = true;
             labelId.BackColor = Color.Transparent;
-            labelId.Location = new Point(13, 29);
+            labelId.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelId.Location = new Point(12, 29);
             labelId.Name = "labelId";
-            labelId.Size = new Size(28, 25);
+            labelId.Size = new Size(29, 25);
             labelId.TabIndex = 4;
             labelId.Text = "Id";
             labelId.Click += labelId_Click;
@@ -97,6 +100,7 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             Controls.Add(labelId);
             Controls.Add(buttonEdit);
             Controls.Add(buttonHapus);

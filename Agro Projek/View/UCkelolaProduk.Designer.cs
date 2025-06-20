@@ -134,7 +134,7 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(297, 253);
+            label1.Location = new Point(297, 187);
             label1.Name = "label1";
             label1.Size = new Size(165, 38);
             label1.TabIndex = 11;
@@ -145,7 +145,7 @@
             // 
             flowListMakanan.AutoScroll = true;
             flowListMakanan.BackColor = Color.Transparent;
-            flowListMakanan.Location = new Point(308, 318);
+            flowListMakanan.Location = new Point(308, 252);
             flowListMakanan.Name = "flowListMakanan";
             flowListMakanan.Size = new Size(531, 612);
             flowListMakanan.TabIndex = 12;

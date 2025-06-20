@@ -109,7 +109,6 @@
             buttonDB.TabIndex = 5;
             buttonDB.Text = "Dashboard";
             buttonDB.UseVisualStyleBackColor = false;
-            buttonDB.Click += buttonDB_Click;
             // 
             // UCpesanan
             // 

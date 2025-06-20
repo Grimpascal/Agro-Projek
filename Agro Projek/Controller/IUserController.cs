@@ -12,6 +12,7 @@ namespace Agro_Projek.Controller
         void tambah(string username, string password, string nomor);
         void hapusPengguna(int userId);
         void editPengguna(int userId, string username, string password, string noTelepon);
+        bool cekUsername(string username);
         List<Login> tampilPengguna();
     }
 }

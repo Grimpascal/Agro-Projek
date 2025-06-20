@@ -13,6 +13,7 @@ namespace Agro_Projek.View
 {
     public partial class TambahPengguna : Form
     {
+        PenggunaController penggunaController = new PenggunaController();
         public TambahPengguna()
         {
             InitializeComponent();
@@ -37,6 +38,7 @@ namespace Agro_Projek.View
             }
             else if (nomor.Length < 12 || nomor.Length > 13)
             {
+                textBoxHp.Clear();
                 MessageBox.Show("Nomor telepon harus 12 nomor", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
@@ -48,6 +50,11 @@ namespace Agro_Projek.View
             else if (string.IsNullOrEmpty(password))
             {
                 MessageBox.Show("Password tidak boleh kosong.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            } else if (penggunaController.cekUsername(username))
+            {
+                textBoxusername.Clear();
+                MessageBox.Show("Username sudah terdaftar, silakan gunakan username lain.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             else

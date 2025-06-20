@@ -51,6 +51,8 @@ namespace Agro_Projek.View
             }
             else
             {
+                textUsername.Clear();
+                textPassword.Clear();
                 MessageBox.Show("Maaf, Username atau Kata Sandi Salah", "Login Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

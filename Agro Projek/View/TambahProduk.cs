@@ -50,10 +50,26 @@ namespace Agro_Projek.View
                 return;
             }
 
+            if (hargaProduk < 0)
+            {
+                textBoxHarga.Clear();
+                MessageBox.Show("Harga tidak boleh kurang dari 0.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textBoxHarga.Focus();
+                return;
+            }
+
             if (!int.TryParse(textBoxStok.Text, out int quantityProduk))
             {
                 textBoxStok.Clear();
                 MessageBox.Show("Masukkan input yang benar untuk stok.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textBoxStok.Focus();
+                return;
+            }
+
+            if (quantityProduk < 0)
+            {
+                textBoxStok.Clear();
+                MessageBox.Show("Stok tidak boleh kurang dari 0.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 textBoxStok.Focus();
                 return;
             }
@@ -89,6 +105,7 @@ namespace Agro_Projek.View
                 MessageBox.Show("Ada kesalahan: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
 
 

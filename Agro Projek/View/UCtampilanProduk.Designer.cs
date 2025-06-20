@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCtampilanProduk));
             labelNama = new Label();
             labelHarga = new Label();
             SuspendLayout();
@@ -37,6 +38,7 @@
             labelNama.AutoSize = true;
             labelNama.BackColor = Color.Transparent;
             labelNama.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelNama.ForeColor = SystemColors.ButtonHighlight;
             labelNama.Location = new Point(56, 28);
             labelNama.Name = "labelNama";
             labelNama.Size = new Size(68, 28);
@@ -48,6 +50,7 @@
             labelHarga.AutoSize = true;
             labelHarga.BackColor = Color.Transparent;
             labelHarga.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelHarga.ForeColor = SystemColors.ButtonHighlight;
             labelHarga.Location = new Point(322, 28);
             labelHarga.Name = "labelHarga";
             labelHarga.Size = new Size(69, 28);
@@ -59,6 +62,7 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkGray;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             Controls.Add(labelHarga);
             Controls.Add(labelNama);
             Name = "UCtampilanProduk";

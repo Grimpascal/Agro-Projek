@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCcontainerProduk));
             labelHarga = new Label();
             labelNama = new Label();
             labelStok = new Label();
@@ -41,7 +42,7 @@
             labelHarga.AutoSize = true;
             labelHarga.BackColor = Color.Transparent;
             labelHarga.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelHarga.Location = new Point(69, 137);
+            labelHarga.Location = new Point(67, 166);
             labelHarga.Name = "labelHarga";
             labelHarga.Size = new Size(61, 25);
             labelHarga.TabIndex = 0;
@@ -51,10 +52,10 @@
             // 
             labelNama.AutoSize = true;
             labelNama.BackColor = Color.Transparent;
-            labelNama.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelNama.Location = new Point(70, 103);
+            labelNama.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelNama.Location = new Point(67, 129);
             labelNama.Name = "labelNama";
-            labelNama.Size = new Size(60, 25);
+            labelNama.Size = new Size(64, 25);
             labelNama.TabIndex = 1;
             labelNama.Text = "Nama";
             // 
@@ -63,7 +64,7 @@
             labelStok.AutoSize = true;
             labelStok.BackColor = Color.Transparent;
             labelStok.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelStok.Location = new Point(70, 171);
+            labelStok.Location = new Point(67, 191);
             labelStok.Name = "labelStok";
             labelStok.Size = new Size(48, 25);
             labelStok.TabIndex = 2;
@@ -72,7 +73,7 @@
             // buttonPlus
             // 
             buttonPlus.BackColor = Color.Green;
-            buttonPlus.Location = new Point(148, 166);
+            buttonPlus.Location = new Point(144, 166);
             buttonPlus.Name = "buttonPlus";
             buttonPlus.Size = new Size(32, 34);
             buttonPlus.TabIndex = 3;
@@ -89,10 +90,12 @@
             buttonMin.TabIndex = 4;
             buttonMin.Text = "-";
             buttonMin.UseVisualStyleBackColor = false;
+            buttonMin.Click += buttonMin_Click;
             // 
             // labelid
             // 
             labelid.AutoSize = true;
+            labelid.BackColor = Color.Transparent;
             labelid.Location = new Point(3, 0);
             labelid.Name = "labelid";
             labelid.Size = new Size(28, 25);
@@ -104,6 +107,7 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             Controls.Add(labelid);
             Controls.Add(buttonMin);
             Controls.Add(buttonPlus);
